@@ -4,6 +4,8 @@
 - This is best done with **package managers** and **virtual environments** 
 - Understanding package management (and package development) is vital when you want to get good at a language.
 
+### What is a dependency
+dependency is another, independent package that a given project uses and requires to be able to run
 
 ### What is a Package Manager?
 
@@ -15,6 +17,17 @@ A **package manager** like `conda`, `Pkg` or `renv` automates the process of ins
 A **virtual environment** is an isolated environment where you can install and manage packages and dependencies separately from the system-wide installation. This isolation ensures that different projects can have different dependencies and versions of packages without causing conflicts.
 
 **Virtual environments** are crucial when you need to handle different versions of dependencies across your different projects. You could try to use one environment for all your projects, but that may quickly lead to conflicts in your dependencies.
+
+
+An environment consists of a certain Python version and some packages. A virtual environment allows you to have multiple, independent versions of python on your system. Environments can also be saved so that you can install all of the packages and replicate the environment on a new system.
+
+Why use one:
+
+to deliver code and keep it the same versions
+to use contribute to a package you also use
+to install on servers
+to share your environment with others
+
 
 #### Multilanguage overview
 
@@ -39,6 +52,7 @@ conda deactivate
 
 - [Excellent tutorial](https://carpentries-incubator.github.io/introduction-to-conda-for-data-scientists/04-sharing-environments/index.html)
 - [Other good resource](https://earth-env-data-science.github.io/lectures/environment/python_environments.html)
+- [See how to install directly from github repository](https://medium.com/i-want-to-be-the-very-best/installing-packages-from-github-with-conda-commands-ebf10de396f4)
 - lightweight alternative: `miniconda`
 - lightweight and faster alternative: `minimamba`
   - In order to put together an actual python environment from your package specifications, conda has to solve a difficult puzzle. Each package specified has certain dependencies on other packages. For example, Xarray depends on Numpy, Pandas, and several others. Moreoever, each version of Xarray requires certain minimum versions of other packages (e.g. Xarray 0.19 requires Numpy >= 1.17 and Pandas >= 1.0). Other packages in your environment may have different or incompatible versions. Finding a combination of packages that are mutually compatible can be framed mathematically as a boolean satisfiability problem.
@@ -48,6 +62,17 @@ conda deactivate
 
 - To see all the environments on your system:
 ```conda info --envs```
+
+**NOTE**
+how to chose which of the main strategies to use: virtualenv and pip or conda
+
+conda comes from Anaconda and does both package management and provides a virtual environment.
+
+pip is the main python package installer
+
+virtualenv creates environments and are pip install compatible.
+
+Making your own packages pip installable requires fewer dependencies, so we’ll focus on virtualenv and pip in this workshop
 
 ##### `renv`
 
@@ -186,6 +211,7 @@ dependencies:
   - Conda first approach
     - Always try to install packages using Conda first, especially for complex dependencies or those requiring compiled binaries (e.g., numpy, pandas, scipy). If a package is not available in Conda, install it using Pip within the Conda environment.
 
+
 - **Installing from `environment.yml`**
 ```bash
 conda env create --prefix ./.env --file environment.yml
@@ -267,6 +293,7 @@ When you install a package, the source code and all of its dependencies need to 
 ### Interactive environments
 - Jupyter notebooks can use `Pkg`, `conda` and `renv` environments
   - see [Making Jupyter aware of your Conda environments](https://carpentries-incubator.github.io/introduction-to-conda-for-data-scientists/04-sharing-environments/index.html#making-jupyter-aware-of-your-conda-environments)
+  - see also this resource https://medium.com/@nrk25693/how-to-add-your-conda-environment-to-your-jupyter-notebook-in-just-4-steps-abeab8b8d084
   - but the process is easier with VSCode
 - Pluto notebooks are designed to be reproducible. Under the hood they contain the package environment inside them (check by viewing the Pluto .jl files in your favorite text editor). This can make it easier to share a Pluto notebook instead of a script or package.
 - Binder
@@ -281,6 +308,7 @@ The some packages/libraries rely on system libraries and utilities, for instance
 - Use containers!
   - [Docker](https://docs.docker.com/get-started/) or Singularity are popular solutions. 
     - See vignette("docker", package = "renv") for recommendations on how Docker can be used together with renv.
+    - see [Reproducible Computational Environments Using Containers: Introduction to Docker](https://carpentries-incubator.github.io/docker-introduction/)
 - Benefits of containers
 - Caveats of containers
   - development is not as easy
@@ -297,5 +325,6 @@ The some packages/libraries rely on system libraries and utilities, for instance
 
 
 ## Take-home messages
+- what are dependencies, package managers and virtual environments
 - Clearly document all dependencies and environment setup instructions in project repositories.
 - Provide setup scripts to automate environment creation and setup for new users or deployment.
