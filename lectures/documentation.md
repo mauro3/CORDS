@@ -8,18 +8,41 @@ Documentation serves many purposes and many audiences, including
 
 ### Style guides
 - Use styles guides for the language you are using
-- Correcly name your variables
+  - [Julia style guide](https://docs.julialang.org/en/v1/manual/style-guide/)
+  - [Google python style guide](https://google.github.io/styleguide/pyguide.html)
+- Correctly name your variables
 
 > There are only two hard things in Computer Science: cache invalidation and naming things.
 *Martin Fowler*
 
+##### Iterate over lines
+```
+for l in L:
+    pass
+```
+Instead, we can clarify the code by using more meaningful variable names:
+
+```
+for line in lines:
+    pass
+```
 
 - Do not hesitate to refactor your code, delete dead code, etc... otherwise you will get others and yourself lost!
 
 ### Comments
+
+
+- In-line comments are often used to explain away bad code; you’d be better off rewriting the code rather than to explain the mess. Instead, aim to write code so that it needs few in-line comments. 
+- *could I write this in a way that the code is self-explanatory?*
+- Reserve in-line comments to give context that is not readily available in the code itself
+  - Reference to a paper
+  - Reference to a Stackoverflow topic
+  - TODOs (see also Better Comments package)
+
+
 - Single line comments
 - Multi-line comments
-
+- 
 ##### julia
 ```
 #=
@@ -36,7 +59,8 @@ comment
 - The file that is displayed on github repo
 - Should contain
   - (Badges showing tests, and a nice logo)
-  - A *Description* of what does this repo correspond to
+  - A one-sentence description of your project
+  - A longer *Description*
   - An overview of the repo structure and files
   - Potentially a *Getting started* or *Examples*
   - An *Installation* section, with dependencies
@@ -44,6 +68,7 @@ comment
   - (A link to the *Documentation*)
   - (A *How to contribute* section)
   - An *Acknowledgement* section
+  - A *License* section
 
 ##### Some examples
 - [HighDimPDE.jl](https://github.com/SciML/HighDimPDE.jl)
@@ -56,14 +81,15 @@ comment
 
 
 ### API documentation / doc strings
-API documentation describes the usage for each piece of your code
+API documentation describes the usage for each piece of your code, namely functions, classes (types) and modules (packages)
 
 - Support markdown styles
   - backticks for variable names
   - `#` for titles,
   - ...
+  - hence can be read by both humans and machines --> useful for automatic documentaiton rendering, but also are parsed by IDEs
+
 - Doc strings in python live inside the function
-- They can also document modules
 
 ```python
 def best_function_ever(a_param, another_parameter):
@@ -94,6 +120,14 @@ foo(xs::Array) = ...
 - Examples
 
 ###### python
+3 Different styles
+- [reST (reStructuredText)](https://sphinx-rtd-tutorial.readthedocs.io/en/latest/docstrings.html)
+- [Google style](https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html)
+- [Numpy style](https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_numpy.html)
+
+
+Google style is easier to read for humans
+
 ```python
 def add(a, b):
     """
@@ -157,8 +191,8 @@ function add(a, b)
 end
 ````
 
-- You may use fancy tools (e.g. `Documenter.jl`) to automatically render your API documentation on website, together with extra literal documentation that may be placed in a `docs` folder. 
-  - readthedocs
+- You may use fancy tools (e.g. `Documenter.jl` or `Sphynx`) to automatically render your API documentation on website, together with extra literal documentation that may be placed in a `docs` folder. 
+  - [readthedocs](https://docs.readthedocs.io/en/stable/intro/getting-started-with-sphinx.html)
   - Github actions can automatize the process of building the documentation for you.
 
 #### Typing
@@ -290,6 +324,9 @@ end
 
 
 ### Take home messages
+- Good documentation helps maintain the long-term memory of a project.
+-  if you have a choice between documenting tricky code and refactoring the code so that it’s less tricky, you’ll often find that refactoring code pays off over the long term. 
+-  more productive to write unit tests that lock in how the code works than to explain how the code should work in words.
 - Types of documentation include: literal, API, and tutorial/example
 - Literal Documentation lives outside the code and explains the big picture ideas of the project and how to get it ste up
 - API documentation lives in docstrings within the code and explains how to use functions in detail
