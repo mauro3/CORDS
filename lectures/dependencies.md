@@ -305,13 +305,19 @@ When you install a package, the source code and all of its dependencies need to 
 The some packages/libraries rely on system libraries and utilities, for instance, 
 - rmarkdwon relies on pandoc, but pandoc is not bundled with the rmarkdown package. That means restoring rmarkdown from the lockfile is insufficient to guarantee exactly the same rendering of RMarkdown documents. 
 - pytorch relies on CUDA drivers, which are specific to machine
+  - [See how you can deal with data with conda here](https://carpentries-incubator.github.io/introduction-to-conda-for-data-scientists/05-managing-cuda-dependencies/index.html)
 - Use containers!
   - [Docker](https://docs.docker.com/get-started/) or Singularity are popular solutions. 
     - See vignette("docker", package = "renv") for recommendations on how Docker can be used together with renv.
     - see [Reproducible Computational Environments Using Containers: Introduction to Docker](https://carpentries-incubator.github.io/docker-introduction/)
+    - 
 - Benefits of containers
+  - Containers are similar to a environment files, in the sense that it describes things that your code needs to run, but on a much larger scale.
+  - For instance, you can specify what type of operating system you want your code to run on, or environment variables that should always be set for your code to work. Docker uses a file called a Dockerfile which contains a series of steps to package up your code into something that contains everything it needs to run, called an “image”.
 - Caveats of containers
   - development is not as easy
+    - But see [Using singularity as a development environment](https://rscdata_science.gitlab.io/rsc_data_science_blog/post/singularity_as_devel_env/)
+    - and [How to remote dev with vscode and singularity](https://github.com/microsoft/vscode-remote-release/issues/3066#issuecomment-1019500216)
   - Singularity e.g. requires a Linux machine
 
 

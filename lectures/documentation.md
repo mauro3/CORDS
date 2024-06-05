@@ -88,8 +88,8 @@ API documentation describes the usage for each piece of your code, namely functi
   - `#` for titles,
   - ...
   - hence can be read by both humans and machines --> useful for automatic documentaiton rendering, but also are parsed by IDEs
-
-- Doc strings in python live inside the function
+  - [See here for an introduction to markdown](https://github.com/carpentries-incubator/markdown-intro)
+  - Doc strings in python live inside the function
 
 ```python
 def best_function_ever(a_param, another_parameter):
