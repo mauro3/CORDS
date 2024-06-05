@@ -24,6 +24,8 @@ These are resources we chanced upon.  Some we may have read others just the titl
 SNF award and conference on reproducible research
 https://www.reproducibility.ch/
 
+- [cheat sheet Julia Matlab Python](https://cheatsheets.quantecon.org) 
+
 ## Software
 
 Here are links to softwares which may suit your needs if you outgrow our hand-rolled solutions presented in this course.
