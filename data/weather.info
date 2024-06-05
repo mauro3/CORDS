@@ -1,0 +1,7 @@
+Data from Met-Station besides Gornergletscher (628154E, 91773N, 2650m asl) from year 2007.
+
+Data format:
+111, year, day, hour, rel. humidity, air temp., perciptation [mm / 30min],
+batt. voltage, internal temp.
+
+weather.dat is all in UTC+1 (swiss wintertime)
