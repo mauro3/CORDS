@@ -214,7 +214,7 @@ dependencies:
 
 - **Installing from `environment.yml`**
 ```bash
-conda env create --prefix ./.env --file environment.yml
+mamba env create --prefix ./.env --file environment.yml
 ```
 
 #### R
