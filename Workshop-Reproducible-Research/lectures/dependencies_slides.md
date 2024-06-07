@@ -98,9 +98,9 @@ dependencies:
 ---
 
 ### Caveats
-- The some packages/libraries rely on system libraries and utilities, for instance, 
+- Some packages/libraries rely on system libraries and utilities, for instance, 
   - `pytorch` relies on CUDA drivers, which are specific to machine
-- Hence by replicating a virtual environment, you won't reproduce the same exact environment...
+- Hence by replicating a virtual environment, you won't necessarily reproduce the same exact environment...
 - Use containers!
   - containers virtualize the operating system, replicating to a deeper lever your environment and making it even more portable
     - operating system
@@ -111,7 +111,15 @@ dependencies:
 
 ---
 
+##  Distinguishing between analysis dependencies and core functions dependencies
+  - it may make sense to also compartmentalize the dependencies between `src` and `scripts`,
+  - this is so that you have a minimal working environment to simply reuse the `src` functions and classes in other, related project. 
+  - What can come handy is to specify the `src` folder as a package. You can do that easily with development tools
+
+---
+
 ## Advanced topic: package development
+
 
 |  | Python | R | Julia |
 | --- | --- | --- | --- |
