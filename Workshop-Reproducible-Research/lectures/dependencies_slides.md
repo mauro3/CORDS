@@ -6,7 +6,6 @@ width: 1920
 height: 1080
 ---
 <!-- -->
-
 ## Handling Dependencies
 - Reproducibility means that you need anyone to recreate the minimal environment to run your scripts (to share your code)
 - It is also good for yourself!
