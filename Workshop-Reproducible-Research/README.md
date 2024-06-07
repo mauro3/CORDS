@@ -38,54 +38,52 @@ This is a hands-on workshop on reproducible research.  Here we provide the lectu
 
 ## Table of Contents
 
-| Topic                    | Lecture                | Hands-on                                  |
-|:-------------------------|:-----------------------|:------------------------------------------|
-| Intro                    | - why, what, how       |                                           |
-|                          | - what we cover        |                                           |
-|                          | - F(inputs) -> outputs |                                           |
-|                          |                        |                                           |
-| Get hands dirty          |                        | Start coding a glacier mass balance model |
-|                          |                        | (Task 1)                                  |
-|                          |                        |                                           |
-|                          |                        |                                           |
-| Version control with Git |                        |                                           |
-|                          |                        |                                           |
-|                          |                        |                                           |
-|                          |                        |                                           |
-|                          |                        |                                           |
-|                          |                        |                                           |
-|                          |                        |                                           |
-|                          |                        |                                           |
-|                          |                        |                                           |
-|                          |                        |                                           |
-|                          |                        |                                           |
-|                          |                        |                                           |
-|                          |                        |                                           |
-|                          |                        |                                           |
-|                          |                        |                                           |
-|                          |                        |                                           |
-|                          |                        |                                           |
-|                          |                        |                                           |
-|                          |                        |                                           |
-|                          |                        |                                           |
-|                          |                        |                                           |
-|                          |                        |                                           |
-|                          |                        |                                           |
-|                          |                        |                                           |
-|                          |                        |                                           |
-|                          |                        |                                           |
-|                          |                        |                                           |
-|                          |                        |                                           |
-|                          |                        |                                           |
-|                          |                        |                                           |
-|                          |                        |                                           |
-|                          |                        |                                           |
-|                          |                        |                                           |
-|                          |                        |                                           |
-|                          |                        |                                           |
-|                          |                        |                                           |
-|                          |                        |                                           |
-|                          |                        |                                           |
-|                          |                        |                                           |
-|                          |                        |                                           |
-|                          |                        |                                           |
+| Topic                    | Lecture                                                             | Hands-on                                             |
+|:-------------------------|:--------------------------------------------------------------------|:-----------------------------------------------------|
+| Intro                    | - why, what, how<br> - what we cover<br> - F(inputs) -> outputs<br> |                                                      |
+|                          |                                                                     |                                                      |
+| Get hands dirty          |                                                                     | **Task 1** Start coding a glacier mass balance model |
+|                          |                                                                     |                                                      |
+|                          |                                                                     |                                                      |
+|                          |                                                                     |                                                      |
+| Version control with Git |                                                                     |                                                      |
+|                          |                                                                     |                                                      |
+|                          |                                                                     |                                                      |
+|                          |                                                                     |                                                      |
+|                          |                                                                     |                                                      |
+|                          |                                                                     |                                                      |
+|                          |                                                                     |                                                      |
+|                          |                                                                     |                                                      |
+|                          |                                                                     |                                                      |
+|                          |                                                                     |                                                      |
+|                          |                                                                     |                                                      |
+|                          |                                                                     |                                                      |
+|                          |                                                                     |                                                      |
+|                          |                                                                     |                                                      |
+|                          |                                                                     |                                                      |
+|                          |                                                                     |                                                      |
+|                          |                                                                     |                                                      |
+|                          |                                                                     |                                                      |
+|                          |                                                                     |                                                      |
+|                          |                                                                     |                                                      |
+|                          |                                                                     |                                                      |
+|                          |                                                                     |                                                      |
+|                          |                                                                     |                                                      |
+|                          |                                                                     |                                                      |
+|                          |                                                                     |                                                      |
+|                          |                                                                     |                                                      |
+|                          |                                                                     |                                                      |
+|                          |                                                                     |                                                      |
+|                          |                                                                     |                                                      |
+|                          |                                                                     |                                                      |
+|                          |                                                                     |                                                      |
+|                          |                                                                     |                                                      |
+|                          |                                                                     |                                                      |
+|                          |                                                                     |                                                      |
+|                          |                                                                     |                                                      |
+|                          |                                                                     |                                                      |
+|                          |                                                                     |                                                      |
+|                          |                                                                     |                                                      |
+|                          |                                                                     |                                                      |
+|                          |                                                                     |                                                      |
+|                          |                                                                     |                                                      |
