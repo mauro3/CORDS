@@ -70,25 +70,25 @@ It should be:
 
 # A Hot Topic
 
-![Scott Callaghan Text](./scott-callaghan-text.png)
+![Scott Callaghan Text](./resources/scott-callaghan-text.png)
 
 ---
 
 # In a Picture
 
-![Reproducible Research 2](./rep-res2.png)
+![Reproducible Research 2](./resources/rep-res2.png)
 
 ---
 
 # In a Picture
 
-![Reproducible Research 3](./rep-res3.png)
+![Reproducible Research 3](./resources/rep-res3.png)
 
 ---
 
 # In a Picture
 
-![Reproducible Research 4](./rep-res4.png)
+![Reproducible Research 4](./resources/rep-res4.png)
 
 ---
 
