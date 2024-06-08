@@ -4,8 +4,6 @@ Git is a version control software, useful to
 - keep track of your progress on code (and other files)
 - to collaborate on code
 - to distribute code, to onself (on other computers) and others
-- it
-
 
 ---
 ## Previous experience
