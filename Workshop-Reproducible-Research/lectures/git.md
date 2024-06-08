@@ -8,13 +8,19 @@ Git is a distributed version control system designed to handle everything from s
 
 # The git-demo steps
 
-Create a repository
+Create a directory/folder and initialize repository
 
     $ mkdir DemoGitRepo
     $ cd DemoGitRepo
     $ git init .
     Initialized empty Git repository in /home/mauro/teaching/2023-CORDS-WSL/tmp/DemoGitRepo/.git/
+
+Add some content (`echo "Some text" > text-file.txt` puts "Some text" into the file)
+
     $ echo "Some text" > text-file.txt
+
+Check with `status` the current state (use it often)
+
     $ git status
     On branch master
 
@@ -25,6 +31,9 @@ Create a repository
             text-file.txt
 
     nothing added to commit but untracked files present (use "git add" to track)
+
+We do as we are told by git:
+
     $ git add text-file.txt
     $ git commit -am "My first git commit"
     [master (root-commit) 0beeefb] My first git commit
