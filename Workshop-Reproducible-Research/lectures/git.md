@@ -8,7 +8,7 @@ Git is a distributed version control system designed to handle everything from s
 
 # The git-demo steps
 
-Here is a recording of a practice demo I did.  It should be mostly like the one done during the workshop.  The `$` signifies the shell prompt.  Pre-pended to it is the currently active branch.
+Here is a recording of the demo done during the presentation [link](https://github.com/mauro3/CORDS/blob/master/Workshop-Reproducible-Research/lectures/git_slides.md#a-brief-git-demo-session).  It should be mostly like the one done during the workshop.  The `$` signifies the shell prompt.  Pre-pended to it is the currently active branch.
 
 Get help
 
