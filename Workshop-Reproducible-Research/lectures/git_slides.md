@@ -1,12 +1,3 @@
----
-theme: moon
-maxScale: 1.5
-minScale: 0.2
-width: 1920
-height: 1080
-revealOptions:
-  transition: 'none'
----
 # A brief intro to Git
 
 Git is a version control software, useful to
@@ -19,13 +10,12 @@ Git is a version control software, useful to
 ---
 ## Previous experience
 
-A few of you are familiar with git already:
+A few of you are familiar with git already (1=none, 2=some, 3=plenty):
 
-![git-survey]()
+<img src="./resources/git-survey.png" alt="git-survey" width="600"/>
 
 Questions:
 - did someone not manage to install git?
-- how often do you use git?
 - do you use: `commit`, `push`, `pull`, `clone`?
 - do you use: `branch`, `merge`, `rebase`?
 - GitHub/GitLab etc? <!-- .element: class="fragment" data-fragment-index="1" -->
@@ -51,8 +41,8 @@ git config --global user.email "youremail@yourdomain.com"
 <div class="fragment" data-fragment-index="2">
 
 - get help with `git help` or `git help init` for the `init` command
-- make a repo in current directory with<br> `git init .`
-- add some files to be tacked with <br> `git add`
+- make a repo in current directory with: `git init .`
+- add some files to be tacked with: `git add`
 - commit them into the history database with<br> `git commit -am "Some good message"`
 - do some changes (`commit` some more)
 - make a feature branch (`branch`, `diff`, `difftool`)
@@ -64,7 +54,7 @@ git config --global user.email "youremail@yourdomain.com"
 
 ### Notes on the git demo
 
-This demo was a purely local demo.  No interaction with a remote server was done (yet).
+This demo was a purely local demo.  No interaction with a remote server was done (this is the next step).
 
 All information git needs (history, tracked files, etc.) is stored in a local database which is hidden in the `.git` folder within top folder of the repository.  (But don't mess with this folder!)
 
@@ -80,7 +70,10 @@ There are (too) many resources on the web for Git...
 - cheat sheet (click on boxes) [https://www.ndpsoftware.com/git-cheatsheet.html#loc=workspace;](https://www.ndpsoftware.com/git-cheatsheet.html#loc=workspace;)
 - get out of a git-mess: [http://justinhileman.info/article/git-pretty/git-pretty.png](http://justinhileman.info/article/git-pretty/git-pretty.png)
 
-## Other tools for git
+<br>
+<br>
+
+### Other tools for git
 There is plenty of software to interact with git, graphical, command line, VSCode, etc.  Feel free to use those.
 
 But we will only be able to help you with vanilla, command-line git. (ok and with the VS code integration)
@@ -90,7 +83,7 @@ But we will only be able to help you with vanilla, command-line git. (ok and wit
 ## Getting started on GitHub
 ###  (similar on GitLab, or elsewhere)
 
-GitHub and GitLab are social coding websites
+GitHub, GitLab, etc. are social coding websites
 - they host code
 - they facilitate for developers to interact
 - they provide infrastructure for software testing, deployment, etc
@@ -162,6 +155,5 @@ For repos without write access, to contribute do:
 
 
 ---
-## Git: questions?
-
+**Git: questions?**
 ![git-me](./resources/l2_git-me.png)

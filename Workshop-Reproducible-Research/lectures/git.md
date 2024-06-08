@@ -8,7 +8,7 @@ Git is a distributed version control system designed to handle everything from s
 
 # The git-demo steps
 
-Here is a recording of the demo done during the presentation [link](https://github.com/mauro3/CORDS/blob/master/Workshop-Reproducible-Research/lectures/git_slides.md#a-brief-git-demo-session).  It should be mostly like the one done during the workshop.  The `$` signifies the shell prompt.  Pre-pended to it is the currently active branch.
+Here is a recording of the demo done during the presentation [link](git_slides.md#a-brief-git-demo-session).  It should be mostly like the one done during the workshop.  The `$` signifies the shell prompt.  Pre-pended to it is the currently active branch.
 
 Get help
 
@@ -207,5 +207,40 @@ Now switch back to master and merge the feature branch into it.  This will now b
      text-file.txt | 4 +---
      1 file changed, 1 insertion(+), 3 deletions(-)
 
+# Get repo onto Github
 
-# The git-merge demo
+Just follow the instructions for pushing an existing repo to Github.  Initialize the repo without readme and license as that would create a non-empty repo to which we cannot just push.  Probably choose the "HTTPS" and you should get instructions something like
+
+    git remote add origin https://github.com/mauro3/GitDemoRepo.git
+    git branch -M main
+    git push -u origin main
+
+I will also need to change `main` -> `master` as my default branch is called `master`.  But you may not have to do that.
+
+This will look something like
+
+    (master) $ git push -u origin master
+    Enumerating objects: 20, done.
+    Counting objects: 100% (20/20), done.
+    Delta compression using up to 16 threads
+    Compressing objects: 100% (11/11), done.
+    Writing objects: 100% (20/20), 1.54 KiB | 790.00 KiB/s, done.
+    Total 20 (delta 3), reused 0 (delta 0), pack-reused 0 (from 0)
+    remote: Resolving deltas: 100% (3/3), done.
+    To github.com:mauro3/GitDemoRepo.git
+     * [new branch]      master -> master
+    branch 'master' set up to track 'origin/master'.
+
+Reloading/visiting the webpage will now show the content.
+
+Note that the default remote is by convention called `origin`, but you could choose something else as well.  One can have several remotes (advanced).  Remotes can be shown with
+
+    (master) $ git remote -v
+    origin  git@github.com:mauro3/GitDemoRepo.git (fetch)
+    origin  git@github.com:mauro3/GitDemoRepo.git (push)
+
+(note that I use the ssh-connection, yours will probably show `https` something).
+
+# The merge conflict demo
+
+Merge conflicts occur when changes overlap, e.g. in both branches the same function is changed.  Then git does not know how to unify them.  But git will notice the situation and manual intervention is needed.

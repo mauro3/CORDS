@@ -1,5 +1,6 @@
 section {
     font-size: 0.7em; /* Adjusts font size for all slides */
+    text-align: left;
 }
 code {
        color: #a0392b; /* Red color, customize as needed */

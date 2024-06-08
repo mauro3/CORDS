@@ -5,5 +5,5 @@ minScale: 0.2
 width: 1920
 height: 1080
 revealOptions:
-  transition: 'none'
+  transition: fade
 ---
