@@ -1,11 +1,3 @@
----
-slideOptions:
-  theme: moon
-  maxScale: '10'
-  minScale: '0.2'
-  width: 1920
-  height: 1080
----
 # Reproducible Research
 ### A Lot of Ins, A Lot of Outs
 
@@ -15,7 +7,8 @@ slideOptions:
 
 ---
 
-## Reproducible Research: A Lot of Ins, A Lot of Outs
+## Reproducible Research
+### A Lot of Ins, A Lot of Outs
 
 
 *"This is a very complicated case, Maude. You know, a lotta ins, a lotta outs, a lotta what-have-yous. And, uh, a lotta strands to keep in my head, man. Lotta strands in old Duder's head."*
@@ -26,30 +19,31 @@ slideOptions:
 
 ## What Does the Dude Mean?
 
-*"This is a very complicated case, Maude.*
-   --> "case" means **reproducible research**
+*"This is a very complicated case, Maude."* \
+--> "case" means **reproducible research**
 <!-- .element: class="fragment" data-fragment-index="1" -->
 
-*You know, a lotta ins,*
-   --> input (raw-)data, simulation/processing-parameters, codes
+*"You know, a lotta ins,"* \
+   --> input (raw-)data,simulation/processing-parameters, codes
 <!-- .element: class="fragment" data-fragment-index="2" -->
 
-*a lotta outs,*
+*"a lotta outs,"*
    --> products, i.e. figures, tables, ...
 <!-- .element: class="fragment" data-fragment-index="3" -->
 
-*a lotta what-have-yous.*
+*"a lotta what-have-yous."*
    --> all the edge cases, hand-edits, coffee-spills, etc.
 <!-- .element: class="fragment" data-fragment-index="4" -->
 
-*And, uh, *a lotta strands* to keep in my head, man. Lotta strands in old Duder's head."*
+*"And, uh, *a lotta strands* to keep in my head, man. Lotta strands in old Duder's head."* \
    --> re-stating our predicament that many things need to come together to make this work
 <!-- .element: class="fragment" data-fragment-index="5" -->
+
 
 ---
 
 
-# What is Reproducible Research?
+### What is Reproducible Research?
 
 It should be:
 
@@ -62,50 +56,49 @@ It should be:
 - reproducible for everyone once published
   (make the code & new data publicly available)
 
-*Here we're ignoring the topic of how to make field/lab data collection reproducible!*
+*Here we're ignoring the topic of how to make field/lab data collection reproducible!* \
 --> This (often) goes under the name of *"replicability"*
 <!-- .element: class="fragment" data-fragment-index="1" -->
 
 ---
 
-# A Hot Topic
+### A Hot Topic
 
 ![Scott Callaghan Text](https://raw.githubusercontent.com/mauro3/CORDS/master/Workshop-Reproducible-Research/lectures/resources/scott-callaghan-text.png)
 
 ---
 
-# In a Picture
+### In a Picture
 
 ![Reproducible Research 2](https://raw.githubusercontent.com/mauro3/CORDS/master/Workshop-Reproducible-Research/lectures/resources/rep-res2.png)
 
 ---
 
-# In a Picture
+### In a Picture
 
 ![Reproducible Research 3](https://raw.githubusercontent.com/mauro3/CORDS/master/Workshop-Reproducible-Research/lectures/resources/rep-res3.png)
 
 ---
 
-# In a Picture
+### In a Picture
 
 ![Reproducible Research 4](https://raw.githubusercontent.com/mauro3/CORDS/master/Workshop-Reproducible-Research/lectures/resources/rep-res4.png)
 
 ---
 
-# How to Go About Reproducible Research
+### How to Go About Reproducible Research
 
 From experience gained over the last few years, in particular with recent projects/papers by students of mine.
 
-## Best Advices:
-
+**Advice**
 - ideally, make your work reproducible from the outset
   - if that is not possible you can start by making parts reproducible
-- *keep on reproducing it!*
+- *keep on reproducing it!* \
   -> For this to work, the data-pipeline must be fully automated.
 
 ---
 
-# Lotta Ins
+### Lotta Ins
 
 - *keep track of the used code*
   - the code you write yourself (version control)
@@ -124,7 +117,7 @@ From experience gained over the last few years, in particular with recent projec
 
 ---
 
-# Processing
+### Processing
 
 - /automate processing of data/
   - i.e. plots, figures, etc.
@@ -138,7 +131,7 @@ From experience gained over the last few years, in particular with recent projec
 
 ---
 
-# Lotta What-Have-Yous
+### Lotta What-Have-Yous
 
 There will always be corner cases, needed hand edits, etc.
 
@@ -153,7 +146,7 @@ Don't spend too much time on them...
 
 ---
 
-# Lotta Outs
+### Lotta Outs
 
 That's the easy bit.
 
@@ -166,7 +159,7 @@ But remember that the *outs* should be fully scripted too.
 
 ---
 
-# Run and Re-Run Your Data-Pipeline
+### Run and Re-Run Your Data-Pipeline
 
 Have a **master-script** which runs the whole pipeline.
 
@@ -174,7 +167,7 @@ For this to work, the data-pipeline must be *fully automated*.
 
 ---
 
-# Publish Your Work
+### Publish Your Work
 
 Besides writing the paper you just have to:
 
@@ -186,7 +179,7 @@ Besides writing the paper you just have to:
 
 ---
 
-# Wrapping Up
+### Wrapping Up
 
 We will (try to) do all of this over the next two days using a toy-research project: a melt-model of a Swiss glacier.
 
@@ -197,13 +190,13 @@ The course material is all on Github, including our implementations of the toy-r
 
 ---
 
-# My Advice
+### My Advice
 
 --> *keep on reproducing your work!*
 
 ---
 
-# The Dude's Advice
+### The Dude's Advice
 
 <video poster="/apps/files_videoplayer/img/poster.png" src="https://people.ee.ethz.ch/~werderm/rere-data/the-big-lebowski-lotta-ins-2.mp4" width="720" controls><source src="https://people.ee.ethz.ch/~werderm/rere-data/the-big-lebowski-lotta-ins-2.mp4" type="video/mp4"></video>
 
@@ -215,7 +208,7 @@ Fortunately, I'm adhering to a pretty strict drug regimen to **keep my mind limb
 
 ---
 
-# Other bits and pieces
+### Other bits and pieces covered in this workshop
 
 Besides the reproducability, we will also look at a few other topics around research code:
 - *make the code useful*

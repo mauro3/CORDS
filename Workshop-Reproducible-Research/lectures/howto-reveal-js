@@ -1,0 +1,9 @@
+Install https://github.com/webpro/reveal-md
+
+Run with
+
+./run-slides.sh your.md
+
+This uses the configurations in custom.css and front-matter.yml, so no
+- yaml front matter is needed in the markdown files
+- style customisation can be in custom.css
