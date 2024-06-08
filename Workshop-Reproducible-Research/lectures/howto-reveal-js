@@ -1,9 +1,11 @@
-Install https://github.com/webpro/reveal-md
+We use reveal.js for presenting the slides (all files *._slides.md).
 
-Run with
+1) Install https://github.com/webpro/reveal-md
+
+2) Run with
 
 ./run-slides.sh your.md
 
 This uses the configurations in custom.css and front-matter.yml, so no
 - yaml front matter is needed in the markdown files
-- style customisation can be in custom.css
+- style customisation is in custom.css

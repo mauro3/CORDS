@@ -9,7 +9,7 @@ echo $1
 cat front-matter.md $1 > $TMPFILE
 
 # Run reveal-md with the temporary file
-reveal-md "$TMPFILE" -w --css custom.css
+reveal-md "$TMPFILE" --css custom.css -w
 
 # Cleanup the temporary file after execution
 rm $TMPFILE

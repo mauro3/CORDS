@@ -1,3 +1,8 @@
 section {
     font-size: 0.7em; /* Adjusts font size for all slides */
 }
+code {
+       color: #a0392b; /* Red color, customize as needed */
+       padding: 2px 4px; /* Optional: some padding for better visibility */
+       border-radius: 3px; /* Optional: rounded corners */
+}
