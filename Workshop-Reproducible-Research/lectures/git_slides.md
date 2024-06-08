@@ -50,6 +50,7 @@ git config --global user.email "youremail@yourdomain.com"
 
 <div class="fragment" data-fragment-index="2">
 
+- get help with `git help` or `git help init` for the `init` command
 - make a repo in current directory with<br> `git init .`
 - add some files to be tacked with <br> `git add`
 - commit them into the history database with<br> `git commit -am "Some good message"`

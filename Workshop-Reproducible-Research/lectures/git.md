@@ -8,6 +8,24 @@ Git is a distributed version control system designed to handle everything from s
 
 # The git-demo steps
 
+Here is a recording of a practice demo I did.  It should be mostly like the one done during the workshop.  The `$` signifies the shell prompt.  Pre-pended to it is the currently active branch.
+
+Get help
+
+    $ git help
+    usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]
+               [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+               [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]
+               [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+               [--config-env=<name>=<envvar>] <command> [<args>]
+    ...
+
+or
+
+    $ git help init
+
+(but as usual for man-pages, its pretty terse)
+
 Create a directory/folder and initialize repository
 
     $ mkdir DemoGitRepo
@@ -39,12 +57,9 @@ We do as we are told by git:
     [master (root-commit) 0beeefb] My first git commit
      1 file changed, 1 insertion(+)
      create mode 100644 text-file.txt
-    (master) $ nano text-file.txt
-    zsh: command not found: nano
-    (master) $ zile text-file.txt
-    (master) $ git status
-    On branch master
-    nothing to commit, working tree clean
+
+Make some more changes to that file
+
     (master) $ echo "\nsome more text" >> text-file.txt
     (master) $ git status
     On branch master
@@ -54,9 +69,10 @@ We do as we are told by git:
             modified:   text-file.txt
 
     no changes added to commit (use "git add" and/or "git commit -a")
+
+Use `diff` to show changes.  The lines with the `+` are new (a `-` would show removals)
+
     (master) $ git diff
-    (master) $ git diff --raw
-    (master) $ git --no-pager diff
     diff --git a/text-file.txt b/text-file.txt
     index 01b51e6..456027e 100644
     --- a/text-file.txt
@@ -65,9 +81,15 @@ We do as we are told by git:
      Some text
     +
     +some more text
-    (master) $ git commit -am "Added some more text"
+
+and commit (the `-a` means commit all changed files, the `-m` allows to add a commit message; but that can also be entered via editor [if you get dropped into vi-editor, esc and :wq to quit...])
+
+    (master) $ git commit -a -m "Added some more text"
     [master be8dc47] Added some more text
      1 file changed, 2 insertions(+)
+
+Make some more files
+
     (master) $ echo 1+1 > code.py
     (master) $ mkdir subdir
     (master) $ echo "Text text" > subdir/ttt
@@ -79,14 +101,19 @@ We do as we are told by git:
             subdir/
 
     nothing added to commit but untracked files present (use "git add" to track)
+
+First need to `add` them
+
     (master) $ git add code.py subdir/ttt
     (master) $ git commit -am "More more more"
     [master 4d95572] More more more
      2 files changed, 2 insertions(+)
      create mode 100644 code.py
      create mode 100644 subdir/ttt
+
+Look at the history with `log` (showing most recent commit at the top).  Note the long hexa-decimal number, that is the SHA1 hash of the commit (a number which uniquely identifies it).
+
     (master) $ git log
-    (master) $ git --no-pager log
     commit 4d955727f4dc6ef7254b8826e521bac9bc5e50ab (HEAD -> master)
     Author: Mauro Werder <mauro3@runbox.com>
     Date:   2024-06-08 22:53:07 +0200
@@ -104,8 +131,14 @@ We do as we are told by git:
     Date:   2024-06-08 22:46:56 +0200
 
         My first git commit
+
+Make a branch, which is a new strand in the history.  Typically used for a task and then merged into the master branch once completed.  The `-c` in `switch` first creates the branch and then switches to it.  Often on Github people will prepend their branchname with a short version of their username, thus I usually use `m3/` as I am `mauro3` there; note that `/` is no directory-something, just part of the name.
+
     (master) $ git switch -c m3/a-branch
     Switched to a new branch 'm3/a-branch'
+
+Do some work on the branch
+
     (m3/a-branch) $ echo "more stuff which isnt quite ready yet to be on the master branch" > text-file.txt
     (m3/a-branch) $ git status
     On branch m3/a-branch
@@ -118,8 +151,14 @@ We do as we are told by git:
     (m3/a-branch) $ git commit -am "working on some cool text"
     [m3/a-branch 48f27ab] working on some cool text
      1 file changed, 1 insertion(+), 3 deletions(-)
+
+Finished with the work on the branch.  Go back to the master branch (side note, these days it main branch is often called `main`)
+
     (m3/a-branch) $ git switch master
     Switched to branch 'master'
+
+Compare the master branch with `m3/a-branch` branch
+
     (master) $ git diff m3/a-branch
     (master) $ git --no-pager diff m3/a-branch
     diff --git a/text-file.txt b/text-file.txt
@@ -131,46 +170,35 @@ We do as we are told by git:
     +Some text
     +
     +some more text
+
+By the way, one can also setup graphical diff-tools.  For me, on Linux, I use `meld`:
+
     (master) $ git difftool m3/a-branch
+
+Do some work on master
+
     (master) $ echo "TTT" >> subdir/ttt
     (master) $ git commit -am "stuff"
     [master c603696] stuff
      1 file changed, 1 insertion(+)
+
+Go back to the other branch.  We now want to get the work into master.  Typically one first merges master into the feature branch:
+
     (master) $ git switch m3/a-branch
     Switched to branch 'm3/a-branch'
-    (m3/a-branch) $ git merge master
-    hint: Waiting for your editor to close the file... Waiting for Emacs...^C
-    (m3/a-branch) $ git merge master -m "getting latest changes from master"
-    fatal: You have not concluded your merge (MERGE_HEAD exists).
-    Please, commit your changes before you merge.
-    (m3/a-branch) $ git status
-    On branch m3/a-branch
-    All conflicts fixed but you are still merging.
-      (use "git commit" to conclude merge)
-
-    Changes to be committed:
-            modified:   subdir/ttt
-
-    (m3/a-branch) $ git reset HEAD
-    Unstaged changes after reset:
-    M       subdir/ttt
-    (m3/a-branch) $ git status
-    On branch m3/a-branch
-    Changes not staged for commit:
-      (use "git add <file>..." to update what will be committed)
-      (use "git restore <file>..." to discard changes in working directory)
-            modified:   subdir/ttt
-
-    no changes added to commit (use "git add" and/or "git commit -a")
-    (m3/a-branch) $ git restore subdir/ttt
-    (m3/a-branch) $ git log
     (m3/a-branch) $ git merge master -m "getting latest changes from master"
     Merge made by the 'ort' strategy.
      subdir/ttt | 1 +
      1 file changed, 1 insertion(+)
+
+We see that we now have the changes done on master also on this branch
+
     (m3/a-branch) $ cat subdir/ttt
     Text text
     TTT
+
+Now switch back to master and merge the feature branch into it.  This will now be a so-called "fast-forward" which is a trivial merge.
+
     (m3/a-branch) $ git switch master
     Switched to branch 'master'
     (master) $ git merge m3/a-branch
@@ -178,3 +206,6 @@ We do as we are told by git:
     Fast-forward
      text-file.txt | 4 +---
      1 file changed, 1 insertion(+), 3 deletions(-)
+
+
+# The git-merge demo
