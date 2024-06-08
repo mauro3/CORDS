@@ -68,7 +68,7 @@ This demo was a purely local demo.  No interaction with a remote server was done
 
 All information git needs (history, tracked files, etc.) is stored in a local database which is hidden in the `.git` folder within top folder of the repository.  (But don't mess with this folder!)
 
-The steps are recorde [git.md](git.md)
+The steps are recorded in [git.md](git.md#the-git-demo-steps)
 
 ---
 
