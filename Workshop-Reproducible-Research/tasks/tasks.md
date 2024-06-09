@@ -2,14 +2,19 @@
 
 For the high-level overview, see [The toy research problem](the-toy-research-project.md).
 
-For detail on the model, see [The mass balance model](the-mass-balance-model.md).
+For details on the model, see [The mass balance model](the-mass-balance-model.md).
 
-## T01: Start coding a glacier mass balance model: the melt function
+For details on the calling and naming conventions, see [API.md](api.md)
+
+## T01
+### Start coding a glacier mass balance model: the melt function
 
 - make a folder `CORDS` somewhere, where all the material of this course will end up
 - make a file `CORDS/melt.*` in your favourite programming language and program the melt function
   - see [The mass balance model: melt function](the-mass-balance-model.md)
   - be sure to follow the function naming and API (application programming interface, here just a fancy way of saying make the function take the suggested arguments in the right order)
+
+
 
 ## T02: Team up with someone, create a git repository on GitHub and add the melt function to the repo
 
@@ -260,7 +265,8 @@ T_threshold = 4
 
 Test both of the scripts.
 
-## T15: Run the model for Breithorngletscher and generate outputs
+## T15
+### Run the model for Breithorngletscher and generate outputs
 
 Now it's time to run our fabulous mass balance model for Breithorngletscher!  Do this in a script.
 
