@@ -1,7 +1,5 @@
 # The toy-project tasks
 
-# FINISH TODOs!
-
 For the high-level overview, see [The toy research problem](the-toy-research-project.md).
 
 For detail on the model, see [The mass balance model](the-mass-balance-model.md).
@@ -10,7 +8,7 @@ For detail on the model, see [The mass balance model](the-mass-balance-model.md)
 
 - make a folder `CORDS` somewhere, where all the material of this course will end up
 - make a file `CORDS/melt.*` in your favourite programming language and program the melt function
-  - see [The mass balance model: melt function](TODO)
+  - see [The mass balance model: melt function](the-mass-balance-model.md)
   - be sure to follow the function naming and API (application programming interface, here just a fancy way of saying make the function take the suggested arguments in the right order)
 
 ## T02: Team up with someone, create a git repository on GitHub and add the melt function to the repo
@@ -223,7 +221,7 @@ function unzip_one_file(zipfile, filename, destination_file)
 end
 ```
 
-## T14: Get the data and set model parameters
+## T14: Get the data and set model parameters (could be worked on concurrently with T15)
 
 The real model runs, I like to keep in a folder called `code/scripts/`; there create a file which will contain the data-downloading codes, say `breithorn-get-data.*`.  This should
 - setup the folders for the data and results
@@ -264,9 +262,13 @@ Test both of the scripts.
 
 ## T15: Run the model for Breithorngletscher and generate outputs
 
-Now it's time to run our fabulous mass balance model for Breithorngletscher!  Do this in a script
+Now it's time to run our fabulous mass balance model for Breithorngletscher!  Do this in a script.
 
-A template (TODO finish):
+To load the DEMs and mask you will need a asii-grid file reader:
+- `rasterio` for Python
+- `raster` for R
+
+A template based on Julia for you to adapt:
 ```julia
 ## Read data
 t, Ts = read_campbell(weather_fl)
@@ -275,17 +277,18 @@ mask = ???
 Ps = Ps0 .+ Ts*0; # make precipitation a vector of same length as Ts
 
 ## Visualize input data
-plot(t, Ts, xlabel="time (d)", ylabel="T (C)")
+plot(t, Ts ...)
 savefig(make_sha_filename(joinpath(results_dir, "breithorn_T"), ".png"))
-heatmap(mask)
+heatmap(mask) # or some other 2D plot
 savefig(make_sha_filename(joinpath(results_dir, "breithorn_mask"), ".png"))
 heatmap(dem)
 savefig(make_sha_filename(joinpath(results_dir, "breithorn_dem"), ".png"))
 
 ## Run the model for the whole Breithorn glacier
-zs = dem[mask.==1] .- z_weather_station # use elevation of weather station as datum
-dt = diff(t)[1]
+zs = dem[mask.==1] .- z_weather_station # selcet glacier points and use elevation of weather station as datum
+dt = t[2] - t[1]
 total_massbalance, point_massbalance = glacier_balance(zs, dt, Ts, Ps, melt_factor, T_threshold, lapse_rate)
+# make a map again
 point_massbalance_map = dem.*NaN
 point_massbalance_map[mask.==1] .= point_massbalance
 heatmap(point_massbalance_map)
@@ -299,7 +302,7 @@ for dT = -4:4
     massbalance_, _ = glacier_balance(zs, dt, Ts_, Ps, melt_factor, T_threshold, lapse_rate)
     push!(out, [dT, massbalance_])
 end
-writedlm(make_sha_filename("../../results/deltaT_impact", ".csv"), out, ',')
+writedlm(make_sha_filename(joinpath(results_dir, "deltaT_impact"), ".csv"), out, ',')
 ```
 
 ## T16: Share the code with another team and hope they can reproduce your results
@@ -307,4 +310,4 @@ writedlm(make_sha_filename("../../results/deltaT_impact", ".csv"), out, ',')
 - create a `main` script which runs the whole pipeline (download->parameters->model run)
 - Make sure the README describes how the code is installed and run.
 
-Find another team using the same programming language and hope they can reproduce your results.
+Find another team using the same programming language and let them try to reproduce your results.
