@@ -10,15 +10,15 @@ This is a hands-on workshop on reproducible research.  Here we provide the lectu
 | **Day 1 (10.6.2024)** |                    |   | **Day 2 (11.6.2024)** |                    |
 | Time                  | Program            |   | Time                  | Program            |
 |-----------------------|--------------------|---|-----------------------|--------------------|
-| 8:30  - 8:45          | Arrival            |   | 8:30  - 10:15         |                    |
-| 8:45  - 10:15         |                    |   | 10:15 - 10:30         | Coffee break       |
-| 10:15 - 10:30         | Coffee break       |   | 10:30 - 12:15         |                    |
-| 10:30 - 12:15         |                    |   | 12:15 - 13:15         | Lunch at the mensa |
-| 12:15 - 13:15         | Lunch at the mensa |   | 13:15 - 15:00         |                    |
-| 13:15 - 15:00         |                    |   | 15:00 - 15:15         | Coffee break       |
-| 15:00 - 15:15         | Coffee break       |   | 15:15 - 17:00         |                    |
-| 15:15 - 17:00         |                    |   | 17:00 - 17:15         | wrap-up            |
-| 17:00                 | Apero              |   |                       |                    |
+| 8:30  - 8:45          | Arrival            |   |                       |                    |
+| 8:45  - 10:15         |                    |   | 8:30  - 10:15         |                    |
+| 10:15 - 10:30         | Coffee break       |   | 10:15 - 10:30         | Coffee break       |
+| 10:30 - 12:15         |                    |   | 10:30 - 12:15         |                    |
+| 12:15 - 13:15         | Lunch at the mensa |   | 12:15 - 13:15         | Lunch at the mensa |
+| 13:15 - 15:00         |                    |   | 13:15 - 15:00         |                    |
+| 15:00 - 15:15         | Coffee break       |   | 15:00 - 15:15         | Coffee break       |
+| 15:15 - 17:00         |                    |   | 15:15 - 17:00         |                    |
+| 17:00                 | Apero              |   | 17:00 - 17:15         | wrap-up            |
 
 
 

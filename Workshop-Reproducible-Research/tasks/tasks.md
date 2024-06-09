@@ -103,11 +103,13 @@ Phew, that was a lot!
 ## T07
 ### Update folder structure of code
 
-In [Lecture 04](L04_code_folders.md) we saw one way of having a folder layout for models.  Implement this (or a variation thereof suitable for your programming language) for your mass-balance model.
+In [Lecture 04](../lectures/L04_code_folders.md) we saw one way of having a folder layout for models.  Implement this (or a variation thereof suitable for your programming language) for your mass-balance model.
 
 - this type of reorganisation is best done in just one repo whilst the other person waits
 - if you move the files, you may have to re-add them to git.  Alternatively, you can use `git mv a b` to move them so git knows automatically
-- once reorganised, commit.  Other person pulls
+- move the assertion-tests into their own folder+file
+  - now its a good time to also run the example `simple.*` during the tests.  Do a check that the `total_massbalance`, `point_massbalance` stay the same (i.e. an *integration test*)
+- once reorganised, run tests, commit
 
 ## T08
 ### Dependency and environment setup
@@ -156,6 +158,8 @@ Try to re-implement it in your language.  You will probably need a package to in
 - R: probably use `gert` package
 
 --> if you struggle, ask ChatGPT for a translation.
+
+- add a test or two to your test suite for this function
 
 Commit & push
 
