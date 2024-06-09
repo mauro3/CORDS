@@ -16,7 +16,8 @@ For details on the calling and naming conventions, see [API.md](api.md)
 
 
 
-## T02: Team up with someone, create a git repository on GitHub and add the melt function to the repo
+## T02
+### Team up with someone, create a git repository on GitHub and add the melt function to the repo
 
 - make teams of two, programming the same language (the spreadsheet with the infos should help)
 - on one person's Github account make a (empty) repository named `breithorn-toy-project-CORDS`
@@ -25,7 +26,8 @@ For details on the calling and naming conventions, see [API.md](api.md)
 - make a clone of the repo
 - move the `melt.*` file to the repo, `git add`, `git commit` and `git push` it.
 
-## T03: Accumulation and lapse rate function.  Merge to code with git
+## T03
+### Accumulation and lapse rate function.  Merge to code with git
 
 - work on separately on the precipitation-function and lapse-rate-function; add them both to the `melt.*` file
 - coordinate to get it into the git repo without conflicts:
@@ -41,14 +43,16 @@ For details on the calling and naming conventions, see [API.md](api.md)
   - -> there are other ways of doing this but this works ok
 
 
-## T04: Basic testing with assertions
+## T04
+### Basic testing with assertions
 
 - test the melt, accumulate and lapse function with "assertions"
   - test that melt is zero for T<0
   - test that accumulation is zero above threshold temp and nonzero below
   - etc
 
-## T05: Review, correct and accept Pull Request (PR)
+## T05
+### Review, correct and accept Pull Request (PR)
 
 - we will try to make a PR against your repository to add
   - a total mass balance function
@@ -61,7 +65,8 @@ For details on the calling and naming conventions, see [API.md](api.md)
 
 --> this concludes the model
 
-## T06: Make an example
+## T06
+### Make an example
 To actually run the model and also for illustration and testing it is good to have an example.  Put the code into the file `simple.*`.  A example file with the basic structure is provided [simple-template.jl](simple-template.jl) (it's in Julia but should be adaptable quickly to other languages).
 
 This is probably done best together (pair programming), i.e. working at one computer together.
@@ -95,7 +100,8 @@ Commit and push.
 
 Phew, that was a lot!
 
-## T07: Update folder structure of code
+## T07
+### Update folder structure of code
 
 In [Lecture 04](L04_code_folders.md) we saw one way of having a folder layout for models.  Implement this (or a variation thereof suitable for your programming language) for your mass-balance model.
 
@@ -103,14 +109,16 @@ In [Lecture 04](L04_code_folders.md) we saw one way of having a folder layout fo
 - if you move the files, you may have to re-add them to git.  Alternatively, you can use `git mv a b` to move them so git knows automatically
 - once reorganised, commit.  Other person pulls
 
-## T08: Dependency and environment setup
+## T08
+### Dependency and environment setup
 
 So far, probably the only dependency (apart from the programming language) is the plotting package.  This you probably also have in your global installation, so, that probably just worked.
 
 - Create an environment for your code, for this follow the instructions in [Lecture 05](lectures/dependencies.md) for your programming language.
 - add all dependencies to it.  Probably just the plotting package.
 
-## T09: Tooling for reproducible model runs: a function which returns a file name with git commit hash
+## T09
+### Tooling for reproducible model runs: a function which returns a file name with git commit hash
 
 A simple way to store results in a reproducible way, is to add the git-hash (the thing you see in `git log`) to the file name.  If you ever want to reproduce it, you know where to go back to.
 
@@ -155,7 +163,8 @@ In the `simple.*` example use this to store a plot (as a png-file) and the tempe
 
 Commit & push
 
-## T10: Documentation
+## T10
+### Documentation
 
 Add documentation to your model:
 - add docstrings to the functions
@@ -164,19 +173,22 @@ Add documentation to your model:
 
 --> ChatGPT is pretty good at writing documentation, if a bit verbose.  Try it.
 
-## T11: License file
+## T11
+### License file
 
 - Pick a license suitable for your project (probably dictated by standards of the used programming language)
 - add the LICENSE file (grab it from https://opensource.org/licenses)
 - commit and push
 
-## T12: Now running the model for a real glacier: get organised with those folders
+## T12
+### Now running the model for a real glacier: get organised with those folders
 
 - make a folder `research-project-breithorn`
 - setup the folder structure within that as discussed in  [Lecture 05](lectures/project-structure.md), or as deemed suitable by yourself
 - just move your code repository into that folder structure, if needed (git does not care if its parent folder is moved or renamed).  Recommended to place it in `research-project-breithorn/code`.
 
-## T13: Tooling for reproducible data handling: make a download function
+## T13
+### Tooling for reproducible data handling: make a download function
 
 Place this in the `src/utils.*` file.
 
@@ -226,7 +238,8 @@ function unzip_one_file(zipfile, filename, destination_file)
 end
 ```
 
-## T14: Get the data and set model parameters (could be worked on concurrently with T15)
+## T14
+### Get the data and set model parameters (could be worked on concurrently with T15)
 
 The real model runs, I like to keep in a folder called `code/scripts/`; there create a file which will contain the data-downloading codes, say `breithorn-get-data.*`.  This should
 - setup the folders for the data and results
@@ -311,7 +324,8 @@ end
 writedlm(make_sha_filename(joinpath(results_dir, "deltaT_impact"), ".csv"), out, ',')
 ```
 
-## T16: Share the code with another team and hope they can reproduce your results
+## T16
+### Share the code with another team and hope they can reproduce your results
 
 - create a `main` script which runs the whole pipeline (download->parameters->model run)
 - Make sure the README describes how the code is installed and run.
