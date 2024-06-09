@@ -10,7 +10,7 @@ What can change?  What needs to be kept track of?
 3. the code itself
 4. model parameters
 
-Point 1 is important too but this we will not cover (virtual machines and docker come to mind, see caveats [L05](L05_dependencies.md)).
+Point 1 is important too but this we will not cover (virtual machines and docker come to mind, see caveats [L05](L05_dependencies.md#caveats-of-virtual-environments)).
 
 ## How can we store this
 
