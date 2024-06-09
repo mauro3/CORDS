@@ -1,6 +1,4 @@
-API (application programming interface)
-**Update this as you go along.
-If changed later keep the old API as ~~crossed out~~**
+## API (application programming interface)
 
 melt-rate function:
 - signature: (T, melt_factor) -> meltrate (m/d)

@@ -6,34 +6,24 @@ This is a hands-on workshop on reproducible research.  Here we provide the lectu
 
 [Table of contents](TOC.md)
 
-**Day 1 (10.6.2024)**
 
-| Time          | Program             |
-|---------------|---------------------|
-| 8:30  - 8:45  | Arrival, name badge |
-| 8:45  - 10:15 | Making a model      |
-| 10:15 - 10:30 | Coffee break        |
-| 10:30 - 12:15 | ???                 |
-| 12:15 - 13:15 | Lunch at the mensa  |
-| 13:15 - 15:00 | ???                 |
-| 15:00 - 15:15 | Coffee break        |
-| 15:15 - 17:00 |                     |
-| 17:00         | Apero               |
+| **Day 1 (10.6.2024)** |                    |   | **Day 2 (11.6.2024)** |                    |
+| Time                  | Program            |   | Time                  | Program            |
+|-----------------------|--------------------|---|-----------------------|--------------------|
+| 8:30  - 8:45          | Arrival            |   | 8:30  - 10:15         |                    |
+| 8:45  - 10:15         |                    |   | 10:15 - 10:30         | Coffee break       |
+| 10:15 - 10:30         | Coffee break       |   | 10:30 - 12:15         |                    |
+| 10:30 - 12:15         |                    |   | 12:15 - 13:15         | Lunch at the mensa |
+| 12:15 - 13:15         | Lunch at the mensa |   | 13:15 - 15:00         |                    |
+| 13:15 - 15:00         |                    |   | 15:00 - 15:15         | Coffee break       |
+| 15:00 - 15:15         | Coffee break       |   | 15:15 - 17:00         |                    |
+| 15:15 - 17:00         |                    |   | 17:00 - 17:15         | wrap-up            |
+| 17:00                 | Apero              |   |                       |                    |
 
 
-**Day 2 (11.6.2024)**
 
-| Time          | Program            |
-|---------------|--------------------|
-| 8:30  - 10:15 | ?                  |
-| 10:15 - 10:30 | Coffee break       |
-| 10:30 - 12:15 | ???                |
-| 12:15 - 13:15 | Lunch at the mensa |
-| 13:15 - 15:00 | ???                |
-| 15:00 - 15:15 | Coffee break       |
-| 15:15 - 17:00 |                    |
-| 17:00 - 17:15 | wrap-up            |
+
 
 ## Further materials
 
-- [Other Resources](resources.md)
+- [Other Resources on reproducible research](resources.md)
