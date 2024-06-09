@@ -64,25 +64,26 @@ It should be:
 
 ### A Hot Topic
 
-![Scott Callaghan Text](https://raw.githubusercontent.com/mauro3/CORDS/master/Workshop-Reproducible-Research/lectures/resources/scott-callaghan-text.png)
+![Swiss Reproducibility Conference 2024](./resources/repo-res-conference.png)
+The [Swiss Reproducibility Conference 2024](https://www.reproducibility.ch/) is currently ongoing!
 
 ---
 
 ### In a Picture
 
-![Reproducible Research 2](https://raw.githubusercontent.com/mauro3/CORDS/master/Workshop-Reproducible-Research/lectures/resources/rep-res2.png)
+![Reproducible Research 2](./resources/rep-res2.png)
 
 ---
 
 ### In a Picture
 
-![Reproducible Research 3](https://raw.githubusercontent.com/mauro3/CORDS/master/Workshop-Reproducible-Research/lectures/resources/rep-res3.png)
+![Reproducible Research 3](./resources/rep-res3.png)
 
 ---
 
 ### In a Picture
 
-![Reproducible Research 4](https://raw.githubusercontent.com/mauro3/CORDS/master/Workshop-Reproducible-Research/lectures/resources/rep-res4.png)
+![Reproducible Research 4](./resources/rep-res4.png)
 
 ---
 
