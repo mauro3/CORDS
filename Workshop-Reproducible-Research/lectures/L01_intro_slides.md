@@ -87,6 +87,36 @@ The [Swiss Reproducibility Conference 2024](https://www.reproducibility.ch/) is 
 
 ---
 
+### In a different picture
+
+<img src="./resources/repo-the-touring-way-repo.jpg" alt="Turing way" width="600"/>
+
+From [The Turing Way](https://the-turing-way.netlify.app) guide to reproducible research
+
+---
+
+### But why?
+
+- open and reproducible science is better science
+- more and more required by journals
+- make your life easier when it comes to the submission of the data
+- facilitate collaboration during research projects
+  - particular supervisor--student setups can profit a lot, I find
+  - also good for past-me collaborating with current-me and future-me
+
+---
+
+### Some definitions
+
+![Turing way: reproducibility matrix](./resources/reproducible-matrix-the-turing-way.jpg)
+
+From [The Turing Way](https://the-turing-way.netlify.app) guide to reproducible research
+
+We will cover the top left corner.
+<!-- .element: class="fragment" data-fragment-index="1" -->
+
+---
+
 ### How to Go About Reproducible Research
 
 From experience gained over the last few years, in particular with recent projects/papers by students of mine.
@@ -114,13 +144,13 @@ From experience gained over the last few years, in particular with recent projec
 <br/>
 <br/>
 
-**master-script** -> fetch data
+**master-script:** fetch data
 
 ---
 
 ### Processing
 
-- /automate processing of data/
+- *automate processing of data*
   - i.e. plots, figures, etc.
   - maybe cache expensive to compute results
 
@@ -128,7 +158,7 @@ From experience gained over the last few years, in particular with recent projec
 <br/>
 <br/>
 
-**master-script** -> fetch data -> do processing / run simulations
+**master-script:** fetch data -> do processing / run simulations
 
 ---
 
@@ -156,7 +186,7 @@ But remember that the *outs* should be fully scripted too.
 <br/>
 <br/>
 
-**master-script** -> fetch data -> do processing / run simulations -> store in `./results` folder
+**master-script:** fetch data -> do processing / run simulations -> store in `./results` folder
 
 ---
 
