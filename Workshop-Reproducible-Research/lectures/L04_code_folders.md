@@ -61,7 +61,7 @@ Note that we will get to where to put data and results a bit later, so far we're
 </details>
 
 
-## Turn in into a "package"
+## Turn the code into a "package"
 
 There are typically ways to turn a code-project into an installable package.  This is in particular useful for code which other people (or yourself) use for different projects.  If our mass-balance model takes off, we can think of turning it into a package!  Again this differs from language to language and we will not look into it further.
 
