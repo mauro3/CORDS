@@ -8,7 +8,7 @@ To make your science openly available you should publish your work (software, ha
 
 ---
 
-## Aright, what license?
+## Aright, aright, what license?
 
 I suggest to use nonrestrictive licenses as that allows other to use your work without headaches
 
