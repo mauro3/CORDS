@@ -10,10 +10,11 @@ You are?
 - name
 - field
 - why interested in reproducible research
-
 ---
 
 ### More logistics
+
+Please fill in the spead-sheet, link sent out with email
 
 Name badges (will also identify us at lunch)
 
