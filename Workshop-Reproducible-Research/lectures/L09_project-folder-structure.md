@@ -90,3 +90,12 @@ MyScientificProject/
 |   |-- requirements.txt  # Python (pip) dependencies
 ```
 The data-submission would then be the `analysis` folder.
+
+---
+
+### Wrapping up
+
+- there is not one way to structure your research project folders
+- a chosen structure should be suitable to both work with and to submit (parts) to a data repository
+
+What is your preference?

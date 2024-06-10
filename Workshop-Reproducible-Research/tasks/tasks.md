@@ -246,7 +246,7 @@ function unzip_one_file(zipfile, filename, destination_file)
 end
 ```
 
-#### Extra task for the fast
+#### Extra task for the fast ones
 
 Create a function which only runs some processing if it cannot find a cached-to-file version of the result.
 This can be used to avoid unnecessarily re-running long calculations.
@@ -345,9 +345,23 @@ writedlm(make_sha_filename(joinpath(results_dir, "deltaT_impact"), ".csv"), out,
 ```
 
 ## T16
+### Give a brief tour of your project
+
+- give a 2min tour of your project
+- focus on the special bits
+- explain where you made some deliberate choices
+
+## T17
 ### Share the code with another team and hope they can reproduce your results
 
 - create a `main` script which runs the whole pipeline (download->parameters->model run)
 - Make sure the README describes how the code is installed and run.
 
 Find another team using the same programming language and let them try to reproduce your results.
+
+## T18
+### Reflect with your team mate (or yourself) what you learned
+
+Prepare an answer to
+- What are your three take-homes?
+- Future plans?

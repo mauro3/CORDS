@@ -27,16 +27,30 @@ The easiest solution, I find, is
 
 ---
 
-### This may not be good enough for large project with lots of model runs
+### This may not be good enough for large project with lots of model runs or complicated pipelines
 
-If there are many model runs with many different parameters, things can get out of hand...
+If there are **many model runs** with many different parameters, things can get out of hand...
 
 - main-script to collect all runs?
 - make a save-function which stores model runs in a table
 - often this is encountered during the exploratory phase of research
 - use tools ranging from
   - pretty simple, e.g. [DrWatson.jl](https://github.com/JuliaDynamics/DrWatson.jl)
-  - vast, e.g. [OpenBIS](https://sis.id.ethz.ch/services/rdm/openbis.html)
+  - vast, e.g. [Renku](https://renkulab.io/)
+  - vaster, e.g. [OpenBIS](https://sis.id.ethz.ch/services/rdm/openbis.html)
 
-However, in the end, i.e. for the publication, the approach advertised here --using a main-script to produce it all-- should work again.
-<!-- .element: class="fragment" data-fragment-index="1" -->
+---
+
+If there is a **complicated pipeline** with different and long-running jobs, then a pipeline tool might be needed.  Such a tool takes care the right part of a pipeline are re-run if something changes somewhere.
+
+- GNU make, the classic, [link](https://goodresearch.dev/pipelines#document-pipelines-with-make) to a description in our context
+- more modern variants (un-tested by me):
+  - "The {targets} R package user manual" https://books.ropensci.org/targets/
+  - "Python pipline" https://pydoit.org/
+  - "Julia pipeline" https://github.com/cihga39871/Pipelines.jl
+  - [Renku](https://renkulab.io/) has "workflows" which look like this
+- List of pipeline softwares https://github.com/pditommaso/awesome-pipeline
+
+---
+
+However, in the end, i.e. for the publication, the approach advertised here --using a main-script to produce it all-- should work again.  And that is certainly a good way to submit it.
