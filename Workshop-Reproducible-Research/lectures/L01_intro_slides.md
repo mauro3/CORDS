@@ -212,12 +212,14 @@ Besides writing the paper you just have to:
 
 ### Wrapping Up
 
-We will (try to) do all of this over the next two days using a toy-research project: a melt-model of a Swiss glacier.
+We will (try to) do all of this over the next two days using a toy-research project: a mass-balance model of a Swiss glacier.
 
 - the idea is to give you brief lectures on the outlined topics
 - you implement them in the toy-research project
 
-The course material is all on Github, including our implementations of the toy-research projects.
+The course material is all on Github, including our implementations of the toy-research projects:
+
+https://github.com/mauro3/CORDS/tree/master/Workshop-Reproducible-Research
 
 ---
 
