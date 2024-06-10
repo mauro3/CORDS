@@ -13,10 +13,15 @@ A **package manager** like `conda`, `Pkg` or `renv` **automates the process of i
 
 A **virtual environment** is an isolated environment where you can install and manage dependencies separately from the system-wide installation. This isolation ensures that different projects can have different dependencies and versions of packages without causing conflicts. Why use a virtual environment?
 
-- For reproducibility:
-  - You need virtual environments for each independent projects! Without specifying a virtual environment, you install packages in your base environment, which is **BAD**! Imagine you are working with Project A and Project B, which both depend on Package1 (currently @v1.1). You leave Project A for a few months, and focus on Project B. A new feature in Package1 motivated you to upgrade to v1.2, which imposes a certain syntax for the relevant function. You then want to come back to Project A, but now everything is broken! Because your code has been formatted to work with Package1v1.1, You want to make sure to compartmentalize environments.
+- For yourself, to best deal with multiple projects and to prevent your code from breaking down overtime. 
+    - Without specifying a virtual environment, you install packages in your base environment, which is shared across all your projects. 
+    - Imagine you are working with Project A and Project B, which both depend on Package1 (currently @v1.1).  
+    - You leave aside Project A for a few months, and focus on Project B. 
+    - A new feature in Package1 motivate you to upgrade to v1.2, which modifies the API or the behavior of one function used in both projects. 
+    - You then want to come back to Project A, but now everything is broken! Because your code has been formatted to work with Package1@v1.1.
+    - Hence, you want to make sure to compartmentalize environments.
 - To share your environment with others individuals and machines. 
-  - A virtual environemt tracks the minimum dependencies, which can easily be shared and installed on other machines
+  - A virtual environement tracks the minimum dependencies, which can easily be shared and installed on other machines.
 
 ### Multilanguage overview
 
@@ -33,20 +38,24 @@ An interesting difference is that some languages, like Python and Rust, have a p
 
 
 #### `conda`
-`conda` is our preferred package manager for Python.
+`conda` is a nice package manager for scientific projects in Python. Over its older concurrent `pip`, it may install artifacts, handle python versions, etc... 
+Here are some essential `conda` commands.
 
 ```bash
-conda create --name myenv
-conda activate myenv
-conda install numpy -c conda-forge
+conda create --name myenv # creates new virtual environment
+conda activate myenv # activate the environment
+conda install numpy -c conda-forge # install a package
 conda deactivate
 ```
-What is the `-c conda-forge`? `conda-forge` is a community-driven **channel** (repository in the python jargon) that often has more up-to-date packages and a broader selection than the default Anaconda repository. You should use for several reasons, but mostly because `conda-forge` generally has the largest volume of packages and the most up-to-date versions
+
+Note that not using `-c conda-forge` will do just fine, but what is it? `conda-forge` is a community-driven **channel** (repository in the python jargon) that often has more up-to-date packages and a broader selection than the default Anaconda repository. You should use for several reasons, but mostly because `conda-forge` generally has the largest volume of packages and the most up-to-date versions
 
 Note that some packages are only available through PyPi (`pip`). But you are covered for that: You can install `pip` packages within a `conda env`, by first activating the `conda env` and then normally using `pip`. `pip` should be part of your dependencies though. Always try to install packages using `conda` first.
 
-We highly recommend using `mamba` as a drop-in replacement for `conda`, for much faster use.
+We highly recommend using [`mamba`](https://mamba.readthedocs.io/en/latest/) as a drop-in replacement for `conda`, for much faster use.
 
+
+**Some useful resources**
 - [A good resource for better understanding difference between `mamba` and `conda`, and their lightweights alternatives](https://earth-env-data-science.github.io/lectures/environment/python_environments.html)
 
 - [Advanced tutorial on using `conda` environments for a scientific project](https://carpentries-incubator.github.io/introduction-to-conda-for-data-scientists/04-sharing-environments/index.html) 
@@ -54,7 +63,7 @@ We highly recommend using `mamba` as a drop-in replacement for `conda`, for much
 - [Tutorial on how to install a package directly from github repository](https://medium.com/i-want-to-be-the-very-best/installing-packages-from-github-with-conda-commands-ebf10de396f4)
 
 
-##### `renv`
+#### `renv`
 
 Here are some basics on how to use `renv`, but see the [renv vignette](https://rstudio.github.io/renv/articles/renv.html) and documentation for more advanced usage.
 
@@ -82,7 +91,7 @@ renv::history()
 renv::revert()
 ```
 
-##### `Pkg`
+#### `Pkg`
 
 ```julia
 using Pkg
