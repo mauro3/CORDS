@@ -32,12 +32,12 @@ plot(...)
 ele = 1500
 Ts_ele = lapse(...)
 Ps = ...
-total_point_balance(...)
+net_balance_fn(...)
 
 ## Run the model for one year for the whole glacier
 xs, zs = synthetic_glacier()
 Ts = ...
-total_massbalance, point_massbalance = glacier_balance(...)
+total_massbalance, point_massbalance = glacier_net_balance_fn(...)
 plot(xs, point_massbalance)
 
 ## Generate output table
