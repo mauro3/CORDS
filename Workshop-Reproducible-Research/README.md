@@ -6,6 +6,10 @@ This is a hands-on workshop on reproducible research.  Here we provide the lectu
 
 [Table of contents](TOC.md)
 
+Example Task repos:
+- https://github.com/vboussange/rere
+- https://github.com/mauro3/ReRe2.jl
+
 
 | **Day 1 (10.6.2024)** |                    |   | **Day 2 (11.6.2024)** |                    |
 | Time                  | Program            |   | Time                  | Program            |
