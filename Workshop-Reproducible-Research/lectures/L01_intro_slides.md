@@ -64,26 +64,26 @@ It should be:
 
 ### A Hot Topic
 
-![Swiss Reproducibility Conference 2024](./resources/repo-res-conference.png)
+![Swiss Reproducibility Conference 2024](https://raw.githubusercontent.com/mauro3/CORDS/master/Workshop-Reproducible-Research/lectures/resources/repo-res-conference.png)
 The [Swiss Reproducibility Conference 2024](https://www.reproducibility.ch/) is currently ongoing!
 
 ---
 
 ### In a Picture
 
-![Reproducible Research 2](./resources/rep-res2.png)
+![Reproducible Research 2](https://raw.githubusercontent.com/mauro3/CORDS/master/Workshop-Reproducible-Research/lectures/resources/rep-res2.png)
 
 ---
 
 ### In a Picture
 
-![Reproducible Research 3](./resources/rep-res3.png)
+![Reproducible Research 3](https://raw.githubusercontent.com/mauro3/CORDS/master/Workshop-Reproducible-Research/lectures/resources/rep-res3.png)
 
 ---
 
 ### In a Picture
 
-![Reproducible Research 4](./resources/rep-res4.png)
+![Reproducible Research 4](https://raw.githubusercontent.com/mauro3/CORDS/master/Workshop-Reproducible-Research/lectures/resources/rep-res4.png)
 
 ---
 
@@ -108,7 +108,7 @@ From [The Turing Way](https://the-turing-way.netlify.app) guide to reproducible 
 
 ### Some definitions
 
-![Turing way: reproducibility matrix](./resources/reproducible-matrix-the-turing-way.jpg)
+![Turing way: reproducibility matrix](https://raw.githubusercontent.com/mauro3/CORDS/master/Workshop-Reproducible-Research/lectures/resources/reproducible-matrix-the-turing-way.jpg)
 
 From [The Turing Way](https://the-turing-way.netlify.app) guide to reproducible research
 
