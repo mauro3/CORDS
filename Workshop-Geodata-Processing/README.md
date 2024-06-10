@@ -2,7 +2,8 @@
 
 ## Schedule
 
-| Time       | Program     |
+
+| Time | Program |
 | -----––––––| -----–––––– |
 | 8:15-08:30 | Arrival     |
 
