@@ -5,12 +5,12 @@
 $$
 M(z,t) =
 \begin{cases}
-mf T(z,t): T(z,t) \ge 0\\
+m T(z,t): T(z,t) \ge 0\\
 0 \hspace{2.85cm}: T(z,t)<0
 \end{cases}
 $$
 
-where $melt_factor$ (m/d/C) is the melt factor.
+where $m$ is the `melt_factor` (m/d/C).
 
 ### Accumulation at a point *C*
 $$
