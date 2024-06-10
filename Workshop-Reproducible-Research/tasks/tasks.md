@@ -254,9 +254,9 @@ This can be used to avoid unnecessarily re-running long calculations.
 Signature `(proc_fn, fn_args, cache_file_name) -> result`
 
 - where `proc_fn(fn_args...) -> result` does the calculation.
-- and `cache_file_name` is the path to the file doing the caching.  This would probably need to be a file-type which can store arbitrary data.
+- and `cache_file_name` is the path to the file doing the caching.  This would probably need to be a file-type which can store arbitrary data.  Probably the file could go into `data/cache` or `results/intermediate`.
 
-Note: this is slowly venturing into the area of diminishing returns of hand-rolled data management tools.
+Note, this is slowly venturing into the area of diminishing returns of hand-rolled data management tools.
 
 ## T14
 ### Get the data and set model parameters (could be worked on concurrently with T15)
