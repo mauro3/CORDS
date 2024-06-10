@@ -14,8 +14,10 @@ lapsed-temperature function
 
 synthetic temperature function:
 - signature: (t) -> T
-- name: `temp`
+  - where t is time
+- name: `synthetic_T`
 
 synthetic precipitation function:
 - signature: (t) -> P
-- name: `precip`
+  - where t is time
+- name: `synthetic_P`
