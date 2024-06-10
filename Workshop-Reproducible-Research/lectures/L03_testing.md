@@ -204,6 +204,8 @@ jobs:
 
 #### `.yaml` workflow for Python:
 
+This action installs the conda environment called `glacier-mass-balance`, specified in the `environment.yml` file.
+It then runs `pytest`, supposing that you have a `test/` folder where your functions are located. First try whether `pytest` works locally. Do not forget to have `pytest` in your dependencies.
 ```yaml
 name: Run tests
 on: push
@@ -225,7 +227,6 @@ jobs:
       - name: Run pytest
         shell: bash -l {0}
         run: | 
-          pip install -e .
           pytest
 ```
 
