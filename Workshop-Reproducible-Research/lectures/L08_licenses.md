@@ -17,3 +17,5 @@ I suggest to use nonrestrictive licenses as that allows other to use your work w
   - [MIT](https://opensource.org/license/mit)
 - more restrictive open licenses of the share-alike variety often cause problems with incompatibility
 - avoid un-free open-ish licences like the non-commercial ones
+
+Here a site to help choose [choosealicense.com](https://choosealicense.com).
