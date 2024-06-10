@@ -205,31 +205,28 @@ jobs:
 #### `.yaml` workflow for Python:
 
 ```yaml
-name: CI
-
+name: Run tests
 on: push
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-
+  miniconda:
+    name: Miniconda ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+        matrix:
+            os: ["ubuntu-latest"]
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
-
-    - name: Set up Python 3.11
-      uses: actions/setup-python@v2
-      with:
-        python-version: "3.11"
-
-    - name: Install Python dependencies
-      run: |
-        python3 -m pip install --upgrade pip
-        python3 -m pip install -r requirements.txt
-
-    - name: Test with PyTest
-      run: |
-        python3 -m pytest --cov=catchment.models tests/test_models.py
+      - uses: actions/checkout@v2
+      - uses: conda-incubator/setup-miniconda@v2
+        with:
+          environment-file: environment.yml
+          activate-environment: glacier-mass-balance
+          auto-activate-base: false
+      - name: Run pytest
+        shell: bash -l {0}
+        run: | 
+          pip install -e .
+          pytest
 ```
 
 ### Other types of tests
