@@ -1,0 +1,23 @@
+Some tricks for slide shows based on markdown with reveal.js
+------------------------------------------------------------
+
+Fragments
+---------
+
+One element just above:
+<!-- .element: class="fragment" data-fragment-index="1" -->
+
+A whole block
+
+<div class="fragment" data-fragment-index="1">
+
+Text (note that the empty lines just below and above are needed)
+
+</div>
+
+
+Images
+------
+
+Scale
+<img src="./resources/git-survey.png" alt="git-survey" width="600"/>
