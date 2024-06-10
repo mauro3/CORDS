@@ -26,9 +26,9 @@ where $P$ is a given precipitation and $T_{th}$ is the temperature below which i
 
 ### Lapsed temperature
 
-$$ T(z,t) = l \Delta z + T(z_{s},t) $$
+$$ T(z,t) = l \Delta z + T(z_{station},t) $$
 
-where $z_s$ is the elevation of the weather station (which provides temperature) and $l$ (C/m) is the lapse rate.
+where $z_{station}$ is the elevation of the weather station (which provides temperature) and $l$ (C/m) is the lapse rate.
 
 # Synthetic example
 
