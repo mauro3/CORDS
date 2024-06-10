@@ -1,95 +1,103 @@
 ## Documentation
-Documentation serves many purposes and many audiences, including
+Documentation serves multiple purposes and may be useful for various audiences, including:
 
-- future self
+- your future self!
 - collaborators
 - users
-- contributors
+- and contributors, should you aim at packaging some of your code into a general-purpose library.
+
+But the best documentation starts by writing self-explanatory code with good conventions.
 
 ### Style guides
-- Use styles guides for the language you are using
-  - [Julia style guide](https://docs.julialang.org/en/v1/manual/style-guide/)
-  - [Google python style guide](https://google.github.io/styleguide/pyguide.html)
-- Correctly name your variables
+Using style guides for your chosen language ensures consistency and readability in your code. Here are some resources:
+
+- [Julia style guide](https://docs.julialang.org/en/v1/manual/style-guide/)
+- [Google python style guide](https://google.github.io/styleguide/pyguide.html)
+
+Correctly naming your variables enhances code clarity. 
 
 > There are only two hard things in Computer Science: cache invalidation and naming things.
 *Martin Fowler*
+
+Instead of using generic names like `l` for a list:
 
 ##### Iterate over lines
 ```
 for l in L:
     pass
 ```
-Instead, we can clarify the code by using more meaningful variable names:
 
+Use descriptive names like 
 ```
 for line in lines:
     pass
 ```
 
-- Do not hesitate to refactor your code, delete dead code, etc... otherwise you will get others and yourself lost!
+Do not hesitate to refactor your code regularly and remove dead code to prevent confusion for yourself and others.
 
 ### Comments
 
+In-line comments should be used sparingly. Aim to write self-explanatory code instead. Use comments to provide context not apparent from the code itself, such as references to papers, Stack Overflow topics, or TODOs.
 
-- In-line comments are often used to explain away bad code; you’d be better off rewriting the code rather than to explain the mess. Instead, aim to write code so that it needs few in-line comments. 
-- *could I write this in a way that the code is self-explanatory?*
-- Reserve in-line comments to give context that is not readily available in the code itself
-  - Reference to a paper
-  - Reference to a Stackoverflow topic
-  - TODOs (see also Better Comments package)
+Use single-line comments for brief explanations and multi-line comments for more detailed information.
 
-
-- Single line comments
-- Multi-line comments
-- 
 ##### julia
-```
+```julia
 #=
-This is a multline 
+This is a multi-line 
 comment
 =#
 ```
 
+##### python
+```python
+"""
+This is a multi-line  
+comment
+"""
+```
+
+Tip: use vscode `rewrap comment/text` to nicely format multiline comments.
+
+On top of nicely formatting your code and appending comments where necessary, a literal documentation greatly facilitates the maintenance, understandability and reproducibility of your code.
 ### Literal documentation
 
-- helps users understand what your tool does and how to get started using it.
+Literal documentation helps users understand your tool and get started with it.
 
 #### README
-- The file that is displayed on github repo
-- Should contain
-  - (Badges showing tests, and a nice logo)
-  - A one-sentence description of your project
-  - A longer *Description*
-  - An overview of the repo structure and files
-  - Potentially a *Getting started* or *Examples*
-  - An *Installation* section, with dependencies
-  - A *Citation*/*Reference* section
-  - (A link to the *Documentation*)
-  - (A *How to contribute* section)
-  - An *Acknowledgement* section
-  - A *License* section
+A README file is essential for any research repository. It is displayed on under the code structure when accessing a GitHub repo.
+It should contain:
+- (Badges showing tests, and a nice logo)
+- A one-sentence description of your project
+- A longer description
+- An overview of the repository structure and files
+- A _Getting started_ or _Examples_ section
+- An _Installation_ section with dependencies
+- A _Citation_/_Reference_ section
+- (A link to the documentation)
+- (A _How to contribute_ section)
+- An _Acknowledgement_ section
+- A _License_ section
 
-##### Some examples
-- [HighDimPDE.jl](https://github.com/SciML/HighDimPDE.jl)
+Some examples:
+<!-- - [HighDimPDE.jl](https://github.com/SciML/HighDimPDE.jl)
 - [Code for HighDimPDE paper](https://github.com/SciML/HighDimPDE.jl)
-- [Code for PiecewiseInference paper](https://github.com/vboussange/partitioning-time-series)
+- [Code for PiecewiseInference paper](https://github.com/vboussange/partitioning-time-series) -->
 - [SatClip](https://github.com/vboussange/partitioning-time-series)
 - [GraphCast](https://github.com/google-deepmind/graphcast)
 - [Alphafold](https://github.com/google-deepmind/alphafold)
 
 
 
-### API documentation / doc strings
-API documentation describes the usage for each piece of your code, namely functions, classes (types) and modules (packages)
+#### API documentation / doc strings
+API documentation describes the usage of functions, classes (types) and modules (packages). Parsers usually support markdown styles, which also enhances raw readability for humans. In short, markdown styles consists in using
 
-- Support markdown styles
-  - backticks for variable names
+  - backticks `` ` `` for variable names
   - `#` for titles,
   - ...
-  - hence can be read by both humans and machines --> useful for automatic documentaiton rendering, but also are parsed by IDEs
   - [See here for an introduction to markdown](https://github.com/carpentries-incubator/markdown-intro)
-  - Doc strings in python live inside the function
+
+Doc strings in python live inside the function
 
 ```python
 def best_function_ever(a_param, another_parameter):
@@ -99,7 +107,7 @@ def best_function_ever(a_param, another_parameter):
     # do some stuff
 ```
 
-- But above the function or type definition in Julia
+But above the function or type definition in Julia
 ```julia
 """
 this is the docstring
@@ -112,15 +120,17 @@ end
 foo(xs::Array) = ...
 ```
 
-#### Best practice
+**Best practice for docstrings include**
 - (in Julia: insert the signature of your function )
 - Short description 
 - Arguments (Args, Input,...)
 - Returns
 - Examples
 
+Several flavours may be used, even for a single language
+
 ###### python
-3 Different styles
+3 Different documentation style flavours
 - [reST (reStructuredText)](https://sphinx-rtd-tutorial.readthedocs.io/en/latest/docstrings.html)
 - [Google style](https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html)
 - [Numpy style](https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_numpy.html)
@@ -191,24 +201,23 @@ function add(a, b)
 end
 ````
 
-- You may use fancy tools (e.g. `Documenter.jl` or `Sphynx`) to automatically render your API documentation on website, together with extra literal documentation that may be placed in a `docs` folder. 
-  - [readthedocs](https://docs.readthedocs.io/en/stable/intro/getting-started-with-sphinx.html)
-  - Github actions can automatize the process of building the documentation for you.
+You may use tools like [`Documenter.jl`]() or [`Sphinx`](https://docs.readthedocs.io/en/stable/intro/getting-started-with-sphinx.html) to automatically render your API documentation on a website. Github actions can automatize the process of building the documentation for you, similarly to how it can automate testing.
+
+Docstrings may be accompanied by typing.
 
 #### Typing
-Typing refers to the specification of variable types and function return types within a programming language. It helps define what kind of data a function or variable can handle, ensuring type safety and reducing runtime errors.
+Typing refers to the specification of variable types and function return types within a programming language. It helps define what kind of data a function or variable can handle, ensuring type safety and reducing runtime errors. It
 
--  Clearly indicates the expected input and output types, making the code easier to understand.
--  Helps catch type-related errors early in the development process.
--  Encourages consistent usage of types throughout the codebase.
+-  clearly indicates the expected input and output types, making the code easier to understand.
+-  helps catch type-related errors early in the development process.
+-  encourages consistent usage of types throughout the codebase.
 
 ##### python
 ```python
 def add(a: int, b: int) -> int:
     return a + b
 ```
-- do not enforce type checking at runtime!
-- you may use decorators to enforce them
+In Python, using typing does not enforce type checking at runtime! You may use decorators to enforce it.
 
 ##### julia
 ```julia
@@ -216,20 +225,28 @@ function add(a::Int, b::Int)
     return a + b
 end
 ```
-- types are enforced at runtime!
-- type annotations can help the Julia compiler optimize performance by making type inferences easier.
+In Julia, types are enforced at runtime! Type annotations help the Julia compiler optimize performance by making type inferences easier.
 
 #### Consider raising errors
-- People don’t read manuals. That includes you. What people do read are error messages. Consider the following function stub, which is meant to convolve two vectors together:
+- We do not like reading manuals. But we are foreced to read error messages. Use assertions and error messages to handle unexpected inputs and guide users.
+
 
 ##### python
 - `assert`: When an assert doesn’t pass, it raises an AssertionError. You can optionally add an error message at the end.
 - `NotImplementedError`, `ValueError`, `NameError`: Commonly used, generic errors you can raise. I probably overuse `NotImplementedError` compared to other types.
 
+```python
+def convolve_vectors(vec1, vec2):
+    if not isinstance(vec1, list) or not isinstance(vec2, list):
+        raise ValueError("Both inputs must be lists.")
+    # convolve the vectors
+```
 
-### Tutorials 
-- vignettes in R
-- but more generally, Tutorial jupyter notebooks on using the code 
+#### Tutorials 
+Create tutorial Jupyter notebooks or vignettes in R to demonstrate the usage of your code. Those can be placed in a folder `examples` or `tutorials`. Format them as e.g.
+
+- vignettes in R,
+- or using Jupyter notebooks, which are the perfect format for tutorials
 
 ### Accessing documentation 
 
@@ -252,7 +269,7 @@ But e.g. VSCode can be also quite helpful, and this works also with your own cod
 ![](resources/hover_doc.png)
 
 
-### Doc testing
+#### Doc testing
 Doc testing, or doctest, allows you to test your code by running examples embedded in the documentation (docstrings). It compares the output of the examples with the expected results given in the docstrings, ensuring the code works as documented.
 
 #### Why doc testing
@@ -273,6 +290,7 @@ def add(a, b):
     """
     return a + b
 ```
+To run the test:
 
 ```
 python -m doctest your_module.py
@@ -307,14 +325,14 @@ end
 ````
 
 ### More resources
-- [Julia documentation](https://docs.julialang.org/en/v1/manual/documentation/#Writing-Documentation)
-- [Good research on documentation](https://goodresearch.dev/docs)
+- [Julia documentation recommendations](https://docs.julialang.org/en/v1/manual/documentation/#Writing-Documentation)
+- [Good research tutorial on documentation](https://goodresearch.dev/docs)
 
 
-- https://carpentries-incubator.github.io/python-packaging-publishing/05-documentation-types-roles/index.html
-- https://carpentries-incubator.github.io/python-packaging-publishing/06-documentation-in-code/index.html
+- [Carpentries incubator on packaging and publish python - type roles](https://carpentries-incubator.github.io/python-packaging-publishing/05-documentation-types-roles/index.html)
+- [Carpentries incubator on packaging and publish python - documentation in code](https://carpentries-incubator.github.io/python-packaging-publishing/06-documentation-in-code/index.html)
 
-### Useful packages
+### Useful packages to help you write and lint your documentation
 - Better Comments
 ![](resources/bettercomments.jpeg)
 - Automatic doc string generation
@@ -325,10 +343,10 @@ end
 
 ### Take home messages
 - Good documentation helps maintain the long-term memory of a project.
--  if you have a choice between documenting tricky code and refactoring the code so that it’s less tricky, you’ll often find that refactoring code pays off over the long term. 
--  more productive to write unit tests that lock in how the code works than to explain how the code should work in words.
-- Types of documentation include: literal, API, and tutorial/example
-- Literal Documentation lives outside the code and explains the big picture ideas of the project and how to get it ste up
-- API documentation lives in docstrings within the code and explains how to use functions in detail
-- Examples are scripts (or notebooks, or code excerpts) that live alongside the project and connect between the details and the common tasks.
-- Consider using ChatGPT to get started with documenting your functions
+- Refactor code to reduce complexity instead of documenting tricky code.
+- Writing unit tests is often more productive than extensive documentation.
+- Types of documentation include literal, API, and tutorial/example documentation.
+- Literal documentation explains the big picture and setup.
+- API documentation lives in docstrings and explains function usage.
+- Examples connect the details to common tasks.
+- Consider using tools like ChatGPT to assist with documenting your functions.
