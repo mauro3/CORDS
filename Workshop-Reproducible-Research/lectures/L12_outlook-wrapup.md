@@ -13,6 +13,8 @@ We produced some tools which maybe of use to you in future projects:
 - git-hash storage function
 - (maybe) the cache function
 
+---
+
 ### Outlook
 
 Where should you go from here?
@@ -24,6 +26,7 @@ If your projects are complicated, consider
 - start using a bunch of existing tools low level tools (such as pipelining software)
 - start learning and using an integrated solution
 
+---
 
 ### The Dude's Advice
 
