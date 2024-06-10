@@ -5,7 +5,7 @@
 $$
 M(z,t) =
 \begin{cases}
-melt_factor \, * \,T(z,t): T(z,t) \ge0\\
+mf T(z,t): T(z,t) \ge 0\\
 0 \hspace{2.85cm}: T(z,t)<0
 \end{cases}
 $$
