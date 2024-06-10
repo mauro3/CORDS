@@ -3,8 +3,8 @@
 ## Schedule
 
 
-| Time | Program |
-| -----––––––| -----–––––– |
-| 8:15-08:30 | Arrival     |
-
+| Time | Program | 
+| ---- | ---- | 
+| 8:15-08:30 | Arrival     | 
+ 
 ## Materials
