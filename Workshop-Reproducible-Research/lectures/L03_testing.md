@@ -97,6 +97,31 @@ Run the tests with:
 pytest test_fib.py
 ```
 
+#### Julia
+ Built in module `Test`, relying on the macro `@test`. Consider grouping your tests with 
+ 
+ ```julia
+ julia> @testset "trigonometric identities" begin
+           θ = 2/3*π
+           @test sin(-θ) ≈ -sin(θ)
+           @test cos(-θ) ≈ cos(θ)
+           @test sin(2θ) ≈ 2*sin(θ)*cos(θ)
+           @test cos(2θ) ≈ cos(θ)^2 - sin(θ)^2
+       end;
+```
+
+This will nicely output
+```
+Test Summary:            | Pass  Total  Time
+trigonometric identities |    4      4  0.2s
+```
+which comes handy for grouping tests applied to a single function or concept.
+
+An additional virtual environment may be specified for tests!
+
+#### R
+[`testhat`](https://testthat.r-lib.org)
+
 ### Testing non-pure functions and classes
 
 For nondeterministic functions, provide the random seed or variables needed by the function as arguments to make them deterministic. 
@@ -218,6 +243,7 @@ jobs:
 
 - [Official GitHub documentation on building and testing Python projects](https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python)
 - [CI with GitHub Action and Docker for Python](https://blog.allenai.org/ci-with-github-actions-for-research-code-a8460c21c6ba)
+- [Julia documentation on unit testing](https://docs.julialang.org/en/v1/stdlib/Test/)
 - [Good Research Practices: Testing](https://goodresearch.dev/testing.html)
 - [The Carpentries: Python Testing](https://carpentries-incubator.github.io/python-testing/)
 
