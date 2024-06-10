@@ -89,7 +89,7 @@ The [Swiss Reproducibility Conference 2024](https://www.reproducibility.ch/) is 
 
 ### In a different picture
 
-<img src="./resources/repo-the-touring-way-repo.jpg" alt="Turing way" width="600"/>
+<img src="https://raw.githubusercontent.com/mauro3/CORDS/master/Workshop-Reproducible-Research/lectures/resources/repo-the-touring-way-repo.jpg" alt="Turing way" width="600"/>
 
 From [The Turing Way](https://the-turing-way.netlify.app) guide to reproducible research
 
