@@ -167,6 +167,10 @@ In the `simple.*` example use this to store a plot (as a png-file) and the tempe
 
 Commit & push
 
+Note: that this is only not super user friendly.  Thoughts:
+- good file names should be better human parsible, say with a date as well as the unparsible hash
+- the hash might better be stored inside the file, albeit, this will depend on the file type
+
 ## T10
 ### Documentation
 
@@ -241,6 +245,18 @@ function unzip_one_file(zipfile, filename, destination_file)
     return nothing
 end
 ```
+
+#### Extra task for the fast
+
+Create a function which only runs some processing if it cannot find a cached-to-file version of the result.
+This can be used to avoid unnecessarily re-running long calculations.
+
+Signature `(proc_fn, fn_args, cache_file_name) -> result`
+
+- where `proc_fn(fn_args...) -> result` does the calculation.
+- and `cache_file_name` is the path to the file doing the caching.  This would probably need to be a file-type which can store arbitrary data.
+
+Note: this is slowly venturing into the area of diminishing returns of hand-rolled data management tools.
 
 ## T14
 ### Get the data and set model parameters (could be worked on concurrently with T15)
