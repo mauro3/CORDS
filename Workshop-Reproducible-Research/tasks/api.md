@@ -21,3 +21,13 @@ synthetic precipitation function:
 - signature: (t) -> P
   - where t is time
 - name: `synthetic_P`
+
+net balance (balance rate integrated over time)
+- signature: `(dt, Ts, Ps, melt_factor, T_threshold) -> net_balance`
+  - where dt is the time step, Ts is the temperature time series, Ps precipitation time series,
+- name: `net_balance_fn`
+
+glacier net balance (balance rate integrated over time and space)
+- signature `(zs, dt, Ts, Ps, melt_factor, T_threshold, lapse_rate) -> glacier_net_balance, net_balance`
+  - where zs are the elevations of the grid points
+- name: `glacier_net_balance_fn`
