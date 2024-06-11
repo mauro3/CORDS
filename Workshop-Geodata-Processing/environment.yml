@@ -5,7 +5,7 @@ channels:
   - conda-forge
 
 dependencies:
-  - python=3.12.3
+  - python
   - jupyter
   - python-wget
   - geopandas
@@ -15,4 +15,3 @@ dependencies:
   - rasterio
   - shapely
   - xdem
-  - rasterstats
