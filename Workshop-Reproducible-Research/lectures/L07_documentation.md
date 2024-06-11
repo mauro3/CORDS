@@ -14,7 +14,7 @@ Using style guides for your chosen language ensures consistency and readability 
 - [Julia style guide](https://docs.julialang.org/en/v1/manual/style-guide/)
 - [Google python style guide](https://google.github.io/styleguide/pyguide.html)
 
-Correctly naming your variables enhances code clarity. 
+Correctly naming your variables enhances code clarity.
 
 > There are only two hard things in Computer Science: cache invalidation and naming things.
 *Martin Fowler*
@@ -27,7 +27,7 @@ for l in L:
     pass
 ```
 
-Use descriptive names like 
+Use descriptive names like
 ```
 for line in lines:
     pass
@@ -44,7 +44,7 @@ Use single-line comments for brief explanations and multi-line comments for more
 ##### julia
 ```julia
 #=
-This is a multi-line 
+This is a multi-line
 comment
 =#
 ```
@@ -52,7 +52,7 @@ comment
 ##### python
 ```python
 """
-This is a multi-line  
+This is a multi-line
 comment
 """
 ```
@@ -122,7 +122,7 @@ foo(xs::Array) = ...
 
 **Best practice for docstrings include**
 - (in Julia: insert the signature of your function )
-- Short description 
+- Short description
 - Arguments (Args, Input,...)
 - Returns
 - Examples
@@ -141,7 +141,7 @@ Google style is easier to read for humans
 ```python
 def add(a, b):
     """
-    Adds two integers.
+    Add two integers.
 
     This function takes two integer arguments and returns their sum.
 
@@ -149,10 +149,10 @@ def add(a, b):
     a: The first integer to be added.
     b: The second integer to be added.
 
-    # Returns:
+    # Return:
     int: The sum of the two integers.
 
-    # Raises:
+    # Raise:
     TypeError: If either of the arguments is not an integer.
 
     Examples:
@@ -242,13 +242,13 @@ def convolve_vectors(vec1, vec2):
     # convolve the vectors
 ```
 
-#### Tutorials 
+#### Tutorials
 Create tutorial Jupyter notebooks or vignettes in R to demonstrate the usage of your code. Those can be placed in a folder `examples` or `tutorials`. Format them as e.g.
 
 - vignettes in R,
 - or using Jupyter notebooks, which are the perfect format for tutorials
 
-### Accessing documentation 
+### Accessing documentation
 
 ##### julia
 

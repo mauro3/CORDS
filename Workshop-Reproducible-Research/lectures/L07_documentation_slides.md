@@ -148,7 +148,7 @@ Example (Python):
 ```python
 def add(a, b):
     """
-    Adds two numbers.
+    Add two numbers.
 
     >>> add(2, 3)
     5
