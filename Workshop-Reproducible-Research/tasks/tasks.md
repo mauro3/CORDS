@@ -385,7 +385,7 @@ writedlm(make_sha_filename(joinpath(results_dir, "deltaT_impact"), ".csv"), out,
 ```
 
 Where the Campbell reader in Julia is
-```
+```julia
 ######
 # File readers
 ######
