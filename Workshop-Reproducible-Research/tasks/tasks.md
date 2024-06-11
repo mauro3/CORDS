@@ -189,7 +189,7 @@ Add documentation to your model:
 ### License file
 
 - Pick a license suitable for your project (probably dictated by standards of the used programming language)
-- add the LICENSE file (grab it from https://opensource.org/licenses)
+- add the LICENSE file (grab it from https://opensource.org/licenses), add it to the top of your repo
 - commit and push
 
 Example for the MIT license:
@@ -219,7 +219,7 @@ SOFTWARE.
 ### Now running the model for a real glacier: get organised with those folders
 
 - make a folder `research-project-breithorn`
-- setup the folder structure within that as discussed in  [Lecture 05](lectures/project-structure.md), or as deemed suitable by yourself
+- setup the folder structure within that as discussed in  [L09](../lectures/L09_project-folder-structure.md), or as deemed suitable by yourself
 - just move your code repository into that folder structure, if needed (git does not care if its parent folder is moved or renamed).  Recommended to place it in `research-project-breithorn/code`.
 
 ## T13
