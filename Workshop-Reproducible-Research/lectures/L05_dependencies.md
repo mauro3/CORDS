@@ -297,4 +297,4 @@ Note that you may want at some point to locate your `src/` (and associated `test
 - Make sure you understand what are package managers, virtual environments, and dependencies both within your project scripts and at the system level.
 - Clearly document all dependencies and environment setup instructions in project repositories.
 - Provide instructions in an **Installation** section in the `readme.md` on how to set up the virtual environment.
-- Check out these two toy research project repositories [in Julia]() and [Python](https://github.com/vboussange/rere), that implement what I believe good examples of research projects!
+- Check out these toy research repositories [in Julia](https://github.com/mauro3/toy-research-project-breithorn) (which uses relative paths for importing the `src` functions), [Python](https://github.com/vboussange/rere) (which has `src` as package), and [R](https://github.com/vboussange/breithornToyProjectCORDS) (which has `src` as package) that implement what I believe good examples of research projects!
