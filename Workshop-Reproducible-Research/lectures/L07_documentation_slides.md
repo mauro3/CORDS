@@ -41,7 +41,7 @@ Write self-explanatory code and use comments to provide context. Use single-line
 Example (Python):
 ```python
 """
-This is a multi-line  
+This is a multi-line
 comment
 """
 ```
@@ -62,6 +62,10 @@ A README file is essential and should contain:
 - Installation instructions
 - Citation/reference section
 - Acknowledgement and license sections
+
+
+Github and Gitlab render the README nicely on the landing page of the project.  Use markdown or similar for formatting.
+<!-- .element: class="fragment" data-fragment-index="1" -->
 
 ---
 
@@ -92,7 +96,7 @@ def add(a, b):
 
 ---
 
-## Typing
+## Type annotations
 Typing specifies variable and function return types, ensuring type safety and reducing runtime errors.
 
 Example (Python):
@@ -153,6 +157,9 @@ def add(a, b):
     """
     return a + b
 ```
+
+Run the doc-tests with `python -m doctest -v your_script.py`
+<!-- .element: class="fragment" data-fragment-index="1" -->
 
 ---
 
