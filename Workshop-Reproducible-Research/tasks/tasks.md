@@ -12,7 +12,7 @@ For details on the calling and naming conventions, see [API.md](api.md)
 - make a folder `CORDS` somewhere, where all the material of this course will end up
 - make a file `CORDS/melt.*` in your favourite programming language and program the melt function
   - see [The mass balance model: melt function](the-mass-balance-model.md)
-  - be sure to follow the function naming and API (application programming interface, here just a fancy way of saying make the function take the suggested arguments in the right order)
+  - be sure to follow the function naming and [API](api.md) (application programming interface, here just a fancy way of saying make the function take the suggested arguments in the right order)
 
 
 
@@ -30,6 +30,8 @@ For details on the calling and naming conventions, see [API.md](api.md)
 ### Accumulation and lapse rate function.  Merge to code with git
 
 - work on separately on the precipitation-function and lapse-rate-function; add them both to the `melt.*` file
+  - follow [The mass balance model: melt function](the-mass-balance-model.md), [API](api.md)
+
 - coordinate to get it into the git repo without conflicts:
   - agree who commits and pushes first
   - second person
@@ -314,6 +316,9 @@ Ps0 = 0.005 # mean (and constant) precipitation rate [m/d]
 ```
 
 **The data** is provided in the [CORDS](https://github.com/mauro3/CORDS/tree/master/data/workshop-reproducible-research) repo.
+- **NOTE** just copy the link for one of the zip files from github does not work.  Click on the file, then right-click on the "raw" button and "copy link"
+  - https://github.com/mauro3/CORDS/raw/master/data/workshop-reproducible-research/foreign/swisstopo_dhm200_cropped.zip
+  - https://github.com/mauro3/CORDS/raw/master/data/workshop-reproducible-research/foreign/swisstopo_dhm200_cropped.zip
 
 Foreign data:
 - the DEM is a cropped version of the DHM200 of swisstopo (foreign data)
