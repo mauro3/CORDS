@@ -171,6 +171,10 @@ Note: that this is only not super user friendly.  Thoughts:
 - good file names should be better human parsible, say with a date as well as the unparsible hash
 - the hash might better be stored inside the file, albeit, this will depend on the file type
 
+#### Extra task for the fast ones
+
+Implement a function which also add a date, such that files get sorted in a nice way.
+
 ## T10
 ### Documentation
 
