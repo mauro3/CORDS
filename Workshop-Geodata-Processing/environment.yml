@@ -1,11 +1,11 @@
-name: cords-geoprocessing
+name: cords-geoprocessing-pv
 
 channels:
   - defaults
   - conda-forge
 
 dependencies:
-  - python
+  - python=3.11.9
   - jupyter
   - python-wget
   - geopandas
