@@ -32,13 +32,15 @@ A **virtual environment** is an isolated environment where you can install and m
 | **Distribution Format** | `.whl` (wheel, incl binaries) or `tar.gz` (source) | `.tar.gz` (source and/or binary) | `Pkg` will git clone from source, and download (binary) artifacts |
 | **Virtual Environment** | `venv`, `virtualenv`, `conda env` | `renv` | Built-in in the `Pkg` module |
 | **Dependency Management** | `requirements.txt` or `Pipfile` (`pip`), or `environment.yml` (`conda env`) or `pyproject.toml` (`poetry`) | `DESCRIPTION`, `NAMESPACE` | `Project.toml`, `Manifest.toml`, `Artifacts.toml` |
-An interesting difference is that some languages, like Python and Rust, have a package manager that is called from outside the language, so from your operating system's command line, while others like in Julia and R are called from inside the programming language itself.
+
+Julia or R have built-in package managers which can be called within the REPL but Python package managers are called from outside the language.
 
 ### Package managers
 
 
 #### `conda`
-`conda` is a nice package manager for scientific projects in Python. Over its older concurrent `pip`, it may install artifacts, handle python versions, etc... 
+`conda` is a very appropriate package manager for scientific projects in Python. Over its older concurrent `pip`, it can handle python versions and all sorts non-python dependencies artifacts. With two lines of code, it allows someone to quickly install the virtual environment, without any pre-requiste python installation.
+
 Here are some essential `conda` commands.
 
 ```bash
@@ -163,6 +165,7 @@ This will load the environment. If it is the first time that you use it, you nee
 (Example) pkg> instantiate
 ```
 
+**Some useful resources**
 - [see here for more info on Julia `.toml` files here](https://pkgdocs.julialang.org/v1/toml-files/)
 
 
@@ -182,7 +185,7 @@ channels:
 dependencies:
   - pytorch=1.1
 ```
-Not using `--from-history` will result in listing **all** dependencies, those installed explicitly AND implicitly. For reproducibility, you are better off using only explicit dependencies.
+Not using `--from-history` will result in listing **all** dependencies, those installed explicitly AND implicitly. This may be a bit messier. 
 
 To specify `pip` packages, just insert in the `.toml`
   ```yml
@@ -192,16 +195,15 @@ To specify `pip` packages, just insert in the `.toml`
       - yellowbrick==0.9
   ```
 
-Note the double ‘==’ instead of ‘=’ for the pip installation and that you should include pip itself as a dependency and then a subsection denoting those packages to be installed via pip
-  
-See also
-- [Good resource on managing packages with pip](https://note.nkmk.me/en/python-pip-install-requirements/)
+Note the double ‘==’ instead of ‘=’ for the pip installation and that you should include pip itself as a dependency and then a subsection denoting those packages to be installed via pip. Also, note that `--from-history` won't catch the pip dependencies. So the best way to proceed is to specify the dependencies by hand.
 
-
-- **Installing from `environment.yml`**
+**Installing from `environment.yml`**
 ```bash
 mamba env create --prefix ./.env --file environment.yml
 ```
+
+**Some additional resources**
+- [Good resource on managing packages with pip](https://note.nkmk.me/en/python-pip-install-requirements/)
 
 #### R
 `renv.lock`
@@ -251,32 +253,44 @@ As you can see the json file has two main components: R and Packages. The R comp
 Jupyter notebooks can use `Pkg`, `conda` and `renv` environments, but you may need some extra steps
   - see [Making Jupyter aware of your Conda environments](https://carpentries-incubator.github.io/introduction-to-conda-for-data-scientists/04-sharing-environments/index.html#making-jupyter-aware-of-your-conda-environments)
   - [see also this resource](https://medium.com/@nrk25693/how-to-add-your-conda-environment-to-your-jupyter-notebook-in-just-4-steps-abeab8b8d084)
-  - Note that you do not need to follow these steps if you are using VS Code.
+  - Note that you do not need to follow these steps if you are using Visual Studio Code.
 
-Other interactive notebooks solutions store directly the environemnts in the files, which is great for reproducibility purposes. This is the case of `Pluto` notebooks, which are designed to be reproducible. Under the hood they contain the package environment inside them (check by viewing the `Pluto.jl` files in your favorite text editor). This can make it easier to share a Pluto notebook instead of a script or package. `Binder` notebooks also ship with a virtual environment, but using `Docker` (see below and [a tutorial here](https://earth-env-data-science.github.io/lectures/environment/binder.html)).
+Other interactive notebooks solutions store directly the environemnts in the files, which is great for reproducibility purposes. This is the case of `Pluto` notebooks, which are designed to be reproducible. Under the hood they contain the package environment inside them `Binder` notebooks also ship with a virtual environment, but using `Docker` (see below and [a tutorial here](https://earth-env-data-science.github.io/lectures/environment/binder.html)).
+
+I personally do not like notebooks, and prefer using scripts in Visual Studio Code, executing them line by line for development with whether the `Julia` extension or the Jupyter extension with `"jupyter.interactiveWindow.textEditor.executeSelection": true`. With such an approach, you can specify which virtual environment should be used at login, and never worry again with that later.
 
 ### Caveats of virtual environments
 Some packages/libraries rely on system libraries and utilities; for instance `pytorch` relies on CUDA drivers, which are specific to a certain machine ([see how you can deal with CUDA drivers with `conda` here](https://carpentries-incubator.github.io/introduction-to-conda-for-data-scientists/05-managing-cuda-dependencies/index.html)), or the behavior of the packages my be dependent on system environmental variables. As such, by replicating a virtual environment, you won't necessarily reproduce the same exact computing environment. 
 To reproduce more closely a computing environment, **containers** may be used. Containers virtualize layers of the operating system, replicating to a deeper lever your environment and making it more reproducible. [Docker](https://docs.docker.com/get-started/) or Singularity are popular solutions. Unfortunately, building containers may be difficult, and the virtualization may add a layer of complexity to your pipeline...
 But see [Using singularity as a development environment](https://rscdata_science.gitlab.io/rsc_data_science_blog/post/singularity_as_devel_env/) and [How to remote dev with vscode and singularity](https://github.com/microsoft/vscode-remote-release/issues/3066#issuecomment-1019500216). Note that you could use both a container and a virtual environment... See [here a tutorial with `renv`](https://rstudio.github.io/renv/articles/docker.html).
 
+**Some additional resources**
 For more information, check [Reproducible Computational Environments Using Containers: Introduction to Docker](https://carpentries-incubator.github.io/docker-introduction/).
 
 
 ## Advanced topic: package development
 
-As you have seen, it makes sense for research projects to distinguish between scripts placed in `scripts/` from reused functions, models etc..., place in `src`.
+It can make sense for research projects to distinguish between scripts placed in `scripts/` and reused functions, models, etc., placed in `src`. We'll cover that more broadly in another post. In such case, it is best to compartmentalize dependencies so as to have a minimal working environment for the `src/` functions and classes, independent of that for your `scripts`. One practical approach for this is to specify the `src` folder as a package. This has a few advantages, including
 
-There, it may make sense to also compartmentalize the dependencies, so that you have a minimal working environment to simply reuse the `src` functions and classes in other, related project. What can come handy is to specify the `src` folder as a package. You can do that easily with development tools.
+- not having to deal with relative position of files to call the functions in `src/`
+- maximizing your productivity by creating a generic package additionally to your main research project.
 
-|  | Python | R | Julia |
-| --- | --- | --- | --- |
-| **Development Tools** | `setuptools`, `poetry` | `devtools` | `Pkg` |
-| **Package Template Tools** | `cookiecutter`, `pyscaffold`, `flit` | `usethis`, `devtools` | `Pkg.generate()` , `PkgTemplates.jl` |
-| **Tutorial** | [Python Packages book](https://py-pkgs.org/) (uses poetry) | [R packages book](https://r-pkgs.org/) | [Pkg docs](https://pkgdocs.julialang.org/v1/) and this [howto](https://julialang.org/contribute/developing_package/) |
+You can achieve this easily with development tools.
+
+For Python, tools like `setuptools` and `poetry` facilitate package development. If you're working in R, `devtools` is the go-to tool for developing packages. In Julia, the `Pkg` tool serves a similar purpose.
+
+Package templates can be useful to simplify the creation of packages by generating package skeletons. In Python, checkout out `cookiecutter`. In R, check `usethis`. For Julia, use the `Pkg.generate()` built-in functionality, or the more advanced `PkgTemplates.jl` package.
+
+Note that you may want at some point to locate your `src/` (and associated `tests`, `docs`, etc...) in a separate git repo.
+
+**Some additional resources**
+- [goodresearch tutorial](https://goodresearch.dev/setup#install-a-project-package) on how to install a project package
+- the [Python Packages book](https://py-pkgs.org/) offers comprehensive guidance using `poetry`.
+- the [R Packages book](https://r-pkgs.org/) covers all aspects of package development.
+- the [Pkg documentation](https://pkgdocs.julialang.org/v1/) and this [how-to guide](https://julialang.org/contribute/developing_package/) for detailed instructions.
 
 
 ## Take-home messages
 - Make sure you understand what are package managers, virtual environments, and dependencies both within your project scripts and at the system level.
 - Clearly document all dependencies and environment setup instructions in project repositories.
-- Provide setup scripts to automate environment creation and setup for new users or deployment.
+- Provide instructions in an **Installation** section in the `readme.md` on how to set up the virtual environment.

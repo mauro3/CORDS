@@ -67,6 +67,11 @@ A README file is essential and should contain:
 Github and Gitlab render the README nicely on the landing page of the project.  Use markdown or similar for formatting.
 <!-- .element: class="fragment" data-fragment-index="1" -->
 
+**Examples**
+- [SatClip](https://github.com/vboussange/partitioning-time-series)
+- [GraphCast](https://github.com/google-deepmind/graphcast)
+- [Alphafold](https://github.com/google-deepmind/alphafold)
+
 ---
 
 ## API Documentation
@@ -96,6 +101,19 @@ def add(a, b):
 
 ---
 
+## Accessing Documentation
+Documentation can be accessed directly in the code environment.
+
+Julia:
+```julia
+?cos
+```
+
+Python:
+```python
+help(myfun)
+```
+
 ## Type annotations
 Typing specifies variable and function return types, ensuring type safety and reducing runtime errors.
 
@@ -104,7 +122,6 @@ Example (Python):
 def add(a: int, b: int) -> int:
     return a + b
 ```
-
 
 ---
 
@@ -123,21 +140,6 @@ def convolve_vectors(vec1, vec2):
 
 ## Tutorials
 Create tutorial Jupyter notebooks or R vignettes to demonstrate the usage of your code. Place them in a folder named `examples` or `tutorials`.
-
----
-
-## Accessing Documentation
-Documentation can be accessed directly in the code environment.
-
-Example (Julia):
-```julia
-?cos
-```
-
-Example (Python):
-```python
-help(myfun)
-```
 
 ---
 
