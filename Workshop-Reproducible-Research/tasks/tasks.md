@@ -318,7 +318,7 @@ Ps0 = 0.005 # mean (and constant) precipitation rate [m/d]
 **The data** is provided in the [CORDS](https://github.com/mauro3/CORDS/tree/master/data/workshop-reproducible-research) repo.
 - **NOTE** just copy the link for one of the zip files from github does not work.  Click on the file, then right-click on the "raw" button and "copy link"
   - https://github.com/mauro3/CORDS/raw/master/data/workshop-reproducible-research/foreign/swisstopo_dhm200_cropped.zip
-  - https://github.com/mauro3/CORDS/raw/master/data/workshop-reproducible-research/foreign/swisstopo_dhm200_cropped.zip
+  - https://github.com/mauro3/CORDS/raw/master/data/workshop-reproducible-research/own/mask_breithorngletscher.zip
 
 Foreign data:
 - the DEM is a cropped version of the DHM200 of swisstopo (foreign data)
