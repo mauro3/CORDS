@@ -7,6 +7,7 @@ Apart from the input data needed to run a model, there are other things which ne
 
 ### What can change?  What needs to be kept track of?
 
+A model run depends on:
 1. the computer's software stack
 2. dependencies
 3. the code itself
@@ -15,6 +16,8 @@ Apart from the input data needed to run a model, there are other things which ne
 
 Point 1 is important but this we will not cover as the tools needed for this are reasonably complicated (virtual machines and docker come to mind, see caveats [L05](L05_dependencies.md#caveats-of-virtual-environments)).
 
+Points 2.-4. we track with git but how to attach that to model outputs?
+
 ---
 
 ### How can we store the information to make runs reproducible?
@@ -22,14 +25,14 @@ Point 1 is important but this we will not cover as the tools needed for this are
 The easiest solution, I find, is
 
 - keep all information related to points 2.-4. in the git repository of the project.
-- store the git hash of the current commit with the produced results (this assumes that it is clear/can be found out which script produced the results)
-- if we were to, say, publish a paper or report, state what version (commit hash, tag, release) of the code was used
+- store the git hash of the current commit with the produced results (this assumes that it can be found out which script produced the results)
+- on publishing a paper or report, state what version (commit hash, tag, release) of the code was used
 
 ---
 
 ### This may not be good enough for large project with lots of model runs or complicated pipelines
 
-If there are **many model runs** with many different parameters, things can get out of hand...
+If there are **many model runs** with many different parameters, inputs, things can get out of hand...
 
 - main-script to collect all runs?
 - make a save-function which stores model runs in a table
@@ -43,13 +46,17 @@ If there are **many model runs** with many different parameters, things can get 
 
 If there is a **complicated pipeline** with different and long-running jobs, then a pipeline tool might be needed.  Such a tool takes care the right part of a pipeline are re-run if something changes somewhere.
 
+<div class="fragment" data-fragment-index="1">
+
 - GNU make, the classic, [link](https://goodresearch.dev/pipelines#document-pipelines-with-make) to a description in our context
 - more modern variants (un-tested by me):
-  - "The {targets} R package user manual" https://books.ropensci.org/targets/
+  - "The {targets} R package" https://books.ropensci.org/targets/
   - "Python pipline" https://pydoit.org/
   - "Julia pipeline" https://github.com/cihga39871/Pipelines.jl
-  - [Renku](https://renkulab.io/) has "workflows" which look like this
+  - [Renku](https://renkulab.io/) has "workflows"
 - List of pipeline softwares https://github.com/pditommaso/awesome-pipeline
+
+</div>
 
 ---
 
