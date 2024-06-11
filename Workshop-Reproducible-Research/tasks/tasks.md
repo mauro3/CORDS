@@ -294,8 +294,6 @@ The real model runs, I like to keep in a folder called `code/scripts/`; there cr
 - specify extra data (elevation of weather station 2650m, mean precipitation rate 0.005m/d)
 
 A template would be
-```
-
 ```julia
 # This script prepares data for Breithorngletscher near Zermatt, Switzerland
 
@@ -314,6 +312,16 @@ A template would be
 z_weather_station = 2650 # elevation of weather station [m]
 Ps0 = 0.005 # mean (and constant) precipitation rate [m/d]
 ```
+
+The data is provided in the [CORDS](https://github.com/mauro3/CORDS/tree/master/data/workshop-reproducible-research) repo.
+
+Foreign data:
+- the DEM is a cropped version of the DHM200 of swisstopo (foreign data)
+
+Own data:
+- the mask is derived from the Swiss Glacier Inventory 2020 https://doi.glamos.ch/data/inventory/inventory_sgi2016_r2020.html . But here we pretend we digitised the glacier boundary ourselves, thus it is our "own" data
+- the temperature data, measured during my PhD (Mauro's) just off Gornergletscher (own data)
+
 
 Set model parameters in a separate file `breithorn-model-paras.*` (for larger projects, it's nice to have those separate from both the data and the model run script).  Contents:
 ```julia

@@ -72,5 +72,5 @@ I distinguish between "own" data and "foreign" data.  This is useful as the own 
 ---
 
 - the DEM is a cropped version of the DHM200 of swisstopo (foreign data)
-- the mask is derived from the Swiss Glacier Inventory 2020 https://doi.glamos.ch/data/inventory/inventory_sgi2016_r2020.html . But here we pretend we digitised the glacier boundary ourselves, thus it is "our" data
+- the mask is derived from the Swiss Glacier Inventory 2020 https://doi.glamos.ch/data/inventory/inventory_sgi2016_r2020.html . But here we pretend we digitised the glacier boundary ourselves, thus it is our "own" data
 - the temperature data, measured during my PhD (Mauro's) just off Gornergletscher (own data)
