@@ -63,6 +63,17 @@ Note that we will get to where to put data and results a bit later, so far we're
 
 ## Turn the code into a "package"
 
+To import functions and classes (types) located in the `src` folder, you typically need to indicate in each script the relative path of `src`. In Julia, you would typically do something like `include("../src/path/to/your/src_file.jl")`. In Python, you would do something like:
+
+```python
+import sys
+sys.path.append("../src/")
+
+from src.path.to.your.src_file import my_fun
+```
+
+If `src/` directory grows, it’s beneficial to convert it into a separate package. Although this process is a bit more complex, it eliminates the need for path specifications, simplifies the import of functions and classes, and makes the codebase easily accessible for other research projects.
+
 There are typically ways to turn a code-project into an installable package.  This is in particular useful for code which other people (or yourself) use for different projects.  If our mass-balance model takes off, we can think of turning it into a package!  Again this differs from language to language and we will not look into it further.
 
 Further reading for

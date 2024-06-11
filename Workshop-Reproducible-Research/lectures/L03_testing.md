@@ -1,8 +1,10 @@
 # Testing your code
 
-Code testing is essential to identify and fix potential issues, to maintain sanity over the course of the development of the project and quickly identify bugs, and to ensure the reliability and sanity of your experiment overtime. Good code loudly indicates when something goes wrong.
+Code testing is essential to identify and fix potential issues, to maintain sanity over the course of the development of the project and quickly identify bugs, and to ensure the reliability and sanity of your experiment overtime.
 
-Some developers start writing tests before writing the actual function, a practice known as [Test-Driven Development (TDD)](https://en.wikipedia.org/wiki/Test-driven_development). This philosophy, strongly advocated by Kent Beck in his book "Test-Driven Development: By Example," ensures that you have a well-tested implementation by the end of the process, and that your coding process is efficient. Define upstream on a piece of paper the behavior of the function, write corresponding tests, and when all tests pass, you are done. This avoids unnecessary features and focusing only on what is needed. 
+Some developers start writing tests before writing the actual function, a practice known as [Test-Driven Development (TDD)](https://en.wikipedia.org/wiki/Test-driven_development). This philosophy ensures that you have a well-tested implementation by the end of the process, and that your coding process is efficient. 
+
+Define upstream on a piece of paper the behavior of the function, write corresponding tests, and when all tests pass, you are done. This avoids unnecessary features and focusing only on what is needed. 
 
 ## Unit testing
 
@@ -229,6 +231,16 @@ jobs:
         run: | 
           pytest
 ```
+
+#### Cool tip
+You can include a cool badge to show visually whether your tests are passing or failing, like so
+
+[![Tests](https://github.com/vboussange/rere/actions/workflows/runtest.yml/badge.svg)](https://github.com/vboussange/rere/actions/workflows/runtest.yml)
+
+You can get the code for this badge by going on your github repo, then Actions. Click on the test action, then on top right click on the `...` and `Create status badge```. 
+
+Cool right?
+
 
 ### Other types of tests
 

@@ -1,5 +1,6 @@
-## Handling dependencies
-Reproducibility in research projects requires that others (and future you) can recreate the minimal environment to run your scripts. This is best achieved using **package managers**  and **virtual environments** . Understanding package management is crucial for mastering a language.
+## A multi-language overview on how to handle dependencies within a research project
+
+Reproducibility in research projects requires that others (and future you) can recreate the minimal environment to run your scripts. This is best achieved using **package managers**  and **virtual environments**.
 
 
 ### What is a dependency
@@ -21,7 +22,7 @@ A **virtual environment** is an isolated environment where you can install and m
     - You then want to come back to Project A, but now everything is broken! Because your code has been formatted to work with Package1@v1.1.
     - Hence, you want to make sure to compartmentalize environments.
 - To share your environment with others individuals and machines. 
-  - A virtual environement tracks the minimum dependencies, which can easily be shared and installed on other machines.
+  - A virtual environement tracks the minimum dependencies, which can easily be shared and installed on other machines (e.g., a HPC).
 
 ### Multilanguage overview
 
@@ -32,6 +33,8 @@ A **virtual environment** is an isolated environment where you can install and m
 | **Distribution Format** | `.whl` (wheel, incl binaries) or `tar.gz` (source) | `.tar.gz` (source and/or binary) | `Pkg` will git clone from source, and download (binary) artifacts |
 | **Virtual Environment** | `venv`, `virtualenv`, `conda env` | `renv` | Built-in in the `Pkg` module |
 | **Dependency Management** | `requirements.txt` or `Pipfile` (`pip`), or `environment.yml` (`conda env`) or `pyproject.toml` (`poetry`) | `DESCRIPTION`, `NAMESPACE` | `Project.toml`, `Manifest.toml`, `Artifacts.toml` |
+
+This table is very much inspired by [The Scientific Coder article](https://scientificcoder.com/comparing-package-management-in-python-r-julia-and-rust) on package managers.
 
 Julia or R have built-in package managers which can be called within the REPL but Python package managers are called from outside the language.
 
@@ -294,3 +297,4 @@ Note that you may want at some point to locate your `src/` (and associated `test
 - Make sure you understand what are package managers, virtual environments, and dependencies both within your project scripts and at the system level.
 - Clearly document all dependencies and environment setup instructions in project repositories.
 - Provide instructions in an **Installation** section in the `readme.md` on how to set up the virtual environment.
+- Check out these two toy research project repositories [in Julia]() and [Python](https://github.com/vboussange/rere), that implement what I believe good examples of research projects!
