@@ -17,3 +17,14 @@ Once you've written the publication, or maybe before, it is time to publish your
 - double check that you include a LICENSE
 - check that you got the ok from all copyright holders that the publication under this license is okey
 - send it off the repository
+
+---
+
+## Where?
+
+- WSL has the [EnviDat](https://www.envidat.ch/) data repository
+- ETH has the [Research Collection](https://www.research-collection.ethz.ch/)
+- there are many large repositories:
+  - [Dryad](https://datadryad.org)
+  - [Figshare](https://figshare.com/)
+  - [Zenodo](https://zenodo.org/)
