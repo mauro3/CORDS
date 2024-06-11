@@ -313,7 +313,7 @@ z_weather_station = 2650 # elevation of weather station [m]
 Ps0 = 0.005 # mean (and constant) precipitation rate [m/d]
 ```
 
-The data is provided in the [CORDS](https://github.com/mauro3/CORDS/tree/master/data/workshop-reproducible-research) repo.
+**The data** is provided in the [CORDS](https://github.com/mauro3/CORDS/tree/master/data/workshop-reproducible-research) repo.
 
 Foreign data:
 - the DEM is a cropped version of the DHM200 of swisstopo (foreign data)
