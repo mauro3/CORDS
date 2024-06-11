@@ -15,3 +15,11 @@
 | 12:15 | Lunch at mensa (if desired) |
  
 ## Materials
+
+To prepare for Thursday's workshop, please set up a conda environment using the attached environment.yaml file. You can do this using the command `conda env create -f environment.yml`
+​
+
+Conda can be excruciatingly slow to solve these environments. If you run into issues, we recommend installing [mamba](https://anaconda.org/conda-forge/mamba) and running `mamba env create -f environment.yml` instead.
+
+
+Once your install is complete, run `conda activate cords-geoprocessing` to activate the environment you just created and test running `jupyter notebook`. If this works you should be all set to go for Thursday's workshop. If you run into issues, send us an email. Remember that we won't be available to trouble-shoot after 5pm tomorrow, and we won't really have time on Thursday morning, so try to set this up as early as possible. 
