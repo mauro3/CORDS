@@ -336,7 +336,7 @@ melt_factor = 0.005
 T_threshold = 4
 ```
 
-Test both of the scripts.
+Test that both of the scripts run and work.
 
 ## T15
 ### Run the model for Breithorngletscher and generate outputs
