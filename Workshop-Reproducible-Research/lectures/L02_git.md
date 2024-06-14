@@ -1,3 +1,4 @@
+
 # Git version control
 
 ChatGPT says (correctly):
@@ -244,3 +245,234 @@ Note that the default remote is by convention called `origin`, but you could cho
 # The merge conflict demo
 
 Merge conflicts occur when changes overlap, e.g. in both branches the same function is changed.  Then git does not know how to unify them.  But git will notice the situation and manual intervention is needed.
+
+
+This is a record of a demo session illustrating merge conflicts, where Alice and Bob edit the same file.  Left hand column is Alice's terminal session, right hand side is Bob's.
+Notes:
+- `zile` is an editor,
+- there is also a recording of this which will show some extra stuff, like the edits done with `zile`
+- further reading [Git book](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging).
+
+```
+| Alice                                               | Bob                                                    |
+|-----------------------------------------------------|--------------------------------------------------------|
+| State: empty repo cloned to A/ and B/               |                                                        |
+|-----------------------------------------------------|--------------------------------------------------------|
+| merge-demo/A(master)  >> zile fns.jl                |                                                        |
+| merge-demo/A(master)  >> git add fns.jl             |                                                        |
+| merge-demo/A(master)  >> git commit -m "A: fns.jl"  |                                                        |
+| merge-demo/A(master)  >> git push                   |                                                        |
+| Enumerating objects: 3, done.                       |                                                        |
+| Counting objects: 100% (3/3), done.                 |                                                        |
+| Delta compression using up to 16 threads            |                                                        |
+| Compressing objects: 100% (2/2), done.              |                                                        |
+| Writing objects: 100% (3/3), 284 bytes              |                                                        |
+| Total 3 (delta 0), reused 0 (delta 0)...            |                                                        |
+| To merge-demo/repo                                  |                                                        |
+| * [new branch]      master -> master                |                                                        |
+|                                                     |                                                        |
+|                                                     |                                                        |
+|                                                     | merge-demo/B >> git pull                               |
+|                                                     | remote: Enumerating objects: 3, done.                  |
+|                                                     | remote: Counting objects: 100% (3/3), done.            |
+|                                                     | remote: Compressing objects: 100% (2/2), done.         |
+|                                                     | remote: Total 3 (delta 0), reused 0 (delta 0), ...     |
+|                                                     | Unpacking objects: 100% (3/3), 264 bytes ...           |
+|                                                     | From merge-demo/repo                                   |
+|                                                     | * [new branch]      master     -> origin/master        |
+|                                                     | merge-demo/B(master)  >> ls                            |
+|                                                     | fns.jl                                                 |
+|                                                     |                                                        |
+|-----------------------------------------------------|--------------------------------------------------------|
+| Both have fns.jl                                    |                                                        |
+| Action: both edit fns.jl at the same time at the    |                                                        |
+| same location                                       |                                                        |
+|-----------------------------------------------------|--------------------------------------------------------|
+|                                                     |                                                        |
+| merge-demo/A(master)  >> zile fns.jl                | merge-demo/B(master)  >> zile fns.jl                   |
+| merge-demo/A(master)  >> git commit -am "A: d arg"  | merge-demo/B(master)  >> git commit -am "B: kwarg"     |
+| [master e8255c8] A: d arg                           | [master 5c4c061] B: d kwarg                            |
+| 1 file changed, 3 insertions(+), 3 deletions(-)     | 1 file changed, 3 insertions(+), 3 deletions(-)        |
+|                                                     |                                                        |
+|-----------------------------------------------------|--------------------------------------------------------|
+| Alice pushes first                                  |                                                        |
+|-----------------------------------------------------|--------------------------------------------------------|
+|                                                     |                                                        |
+| merge-demo/A(master)  >> git push                   |                                                        |
+| Enumerating objects: 5, done.                       |                                                        |
+| Counting objects: 100% (5/5), done.                 |                                                        |
+| Delta compression using up to 16 threads            |                                                        |
+| Compressing objects: 100% (2/2), done.              |                                                        |
+| Writing objects: 100% (3/3), ..., done.             |                                                        |
+| Total 3 (delta 0), reused 0 (delta 0)...            |                                                        |
+| To merge-demo/repo                                  |                                                        |
+| 65f7f3a..e8255c8  master -> master                  |                                                        |
+|                                                     |                                                        |
+|-----------------------------------------------------|--------------------------------------------------------|
+| Now Bob cannot push because there are               |                                                        |
+| commits on the repo which he doesn't have.          |                                                        |
+|-----------------------------------------------------|--------------------------------------------------------|
+|                                                     |                                                        |
+|                                                     | merge-demo/B(master)  >> git push                      |
+|                                                     | To merge-demo/repo                                     |
+|                                                     | ! [rejected]        master -> master (fetch first)     |
+|                                                     | error: failed to push some refs to                     |
+|                                                     | '~/teaching/2023-CORDS-WSL/tmp/merge-demo/repo'        |
+|                                                     | hint: Updates were rejected because the remote         |
+|                                                     | hint: contains work that you do not have locally.      |
+|                                                     | hint: This is usually caused by another repository     |
+|                                                     | hint: pushing to the same ref. If you want to          |
+|                                                     | hint: integrate the remote changes, use                |
+|                                                     | hint: 'git pull' before pushing again.                 |
+|                                                     | hint: See the 'Note about fast-forwards'               |
+|                                                     | hint: in 'git push --help'                             |
+|                                                     |                                                        |
+|-----------------------------------------------------|--------------------------------------------------------|
+| Bob now pulls first.  In the best case this         |                                                        |
+| just works (when there are no trivial changes,      |                                                        |
+| this would be a "fast-forward" merge)               |                                                        |
+|-----------------------------------------------------|--------------------------------------------------------|
+|                                                     | Merge-demo/B(master)  >> git pull                      |
+|                                                     | remote: Enumerating objects: 5, done.                  |
+|                                                     | remote: Counting objects: 100% (5/5), done.            |
+|                                                     | remote: Compressing objects: 100% (2/2), done.         |
+|                                                     | remote: Total 3 (delta 0), reused 0 (delta 0)          |
+|                                                     | Unpacking objects: 100% (3/3), 290 bytes ...           |
+|                                                     | From merge-demo/repo                                   |
+|                                                     | 65f7f3a..e8255c8  master     -> origin/master          |
+|                                                     | hint: Diverging branches can't be fast-forwarded       |
+|                                                     | hint: you need to either:                              |
+|                                                     | hint:                                                  |
+|                                                     | hint: 	git merge --no-ff                            |
+|                                                     | hint:                                                  |
+|                                                     | hint: or:                                              |
+|                                                     | hint:                                                  |
+|                                                     | hint: 	git rebase                                   |
+|                                                     | hint:                                                  |
+|                                                     | hint: Disable this message with                        |
+|                                                     | hint: "git config advice.diverging false"              |
+|                                                     |                                                        |
+|                                                     | fatal: Not possible to fast-forward, aborting.         |
+|-----------------------------------------------------|--------------------------------------------------------|
+| There are some changes which are non-trivial        |                                                        |
+| so they need to be merged somehow.                  |                                                        |
+| Start with looking at the `diff`, if ok `merge`.    |                                                        |
+|-----------------------------------------------------|--------------------------------------------------------|
+|                                                     | merge-demo/B(master)  >> git diff origin/master        |
+|                                                     |                                                        |
+|                                                     |                                                        |
+|                                                     | merge-demo/B(master)  >> git merge origin/master       |
+|                                                     | Auto-merging fns.jl                                    |
+|                                                     | CONFLICT (content): Merge conflict in fns.jl           |
+|                                                     | Automatic merge failed; fix conflicts and              |
+|                                                     | then commit the result.                                |
+|-----------------------------------------------------|--------------------------------------------------------|
+| If there are no conflicting changes, i.e. no        |                                                        |
+| changes touched the same lines of the code.         |                                                        |
+| Then the merge will just succeed and you are        |                                                        |
+| prompted to enter a merge-commit message.           |                                                        |
+| (NOTE: just because there are no conflicting lines  |                                                        |
+| does not guarantee that there is no conflict in     |                                                        |
+| logic!  But this you need to be sure and that is    |                                                        |
+| why we did the `git diff` in the previous step).    |                                                        |
+|                                                     |                                                        |
+| However, there are conflicts, so we need to merge   |                                                        |
+| them manually. Always good start with `status`:     |                                                        |
+|-----------------------------------------------------|--------------------------------------------------------|
+|                                                     | merge-demo/B(master)  >> git status                    |
+|                                                     | On branch master                                       |
+|                                                     | Your branch and 'origin/master' have diverged,         |
+|                                                     | and have 1 and 1 different commits each,               |
+|                                                     | respectively.                                          |
+|                                                     | (use "git pull" if you want to integrate               |
+|                                                     | the remote branch with yours)                          |
+|                                                     |                                                        |
+|                                                     | You have unmerged paths.                               |
+|                                                     | (fix conflicts and run "git commit")                   |
+|                                                     | (use "git merge --abort" to abort the merge)           |
+|                                                     |                                                        |
+|                                                     | Unmerged paths:                                        |
+|                                                     | (use "git add <file>..." to mark resolution)           |
+|                                                     | both modified:   fns.jl                                |
+|                                                     |                                                        |
+|                                                     | no changes added to commit                             |
+|                                                     | (use "git add" and/or "git commit -a")                 |
+|-----------------------------------------------------|--------------------------------------------------------|
+| Now Bob needs to edit his file.  The locations      |                                                        |
+| where there are merge conflicts will be marked with |                                                        |
+| <<<<<<<< ===== and >>>>>>.  Edit them like any text |                                                        |
+| to make a merged version.  Remember, there might    |                                                        |
+| be logical merge-issues (even in other files) as    |                                                        |
+| well, fix those too.  Do as git says, mark the      |                                                        |
+| resolution with `add` then commit                   |                                                        |
+|-----------------------------------------------------|--------------------------------------------------------|
+|                                                     | merge-demo/B(master)  >> zile fns.jl                   |
+|                                                     | merge-demo/B(master)  >> git add fns.jl                |
+|                                                     | merge-demo/B(master)  >> git commit -m "merged: use B" |
+|                                                     | [master 772bc95] B: better                             |
+|                                                     | merge-demo/B(master)  >> git push                      |
+|                                                     | Enumerating objects: 8, done.                          |
+|                                                     | Counting objects: 100% (8/8), done.                    |
+|                                                     | Delta compression using up to 16 threads               |
+|                                                     | Compressing objects: 100% (3/3), done.                 |
+|                                                     | Writing objects: 100% (4/4), 442 bytes ...             |
+|                                                     | Total 4 (delta 1), reused 0 (delta 0), ...             |
+|                                                     | To merge-demo/repo                                     |
+|                                                     | e8255c8..772bc95  master -> master                     |
+|-----------------------------------------------------|--------------------------------------------------------|
+| If Alice pulls now, it works fine and she gets      |                                                        |
+| Bob's changes                                       |                                                        |
+|-----------------------------------------------------|--------------------------------------------------------|
+|                                                     |                                                        |
+| merge-demo/A(master)  >> git pull                   |                                                        |
+| remote: Enumerating objects: 8, done.               |                                                        |
+| remote: Counting objects: 100% (8/8), done.         |                                                        |
+| remote: Compressing objects: 100% (3/3), done.      |                                                        |
+| remote: Total 4 (delta 1), reused 0 (delta 0)       |                                                        |
+| Unpacking objects: 100% (4/4), 422 bytes  done.     |                                                        |
+| From merge-demo/repo                                |                                                        |
+| e8255c8..772bc95  master     -> origin/master       |                                                        |
+|                                                     |                                                        |
+| Updating e8255c8..772bc95                           |                                                        |
+| Fast-forward                                        |                                                        |
+| fns.jl \| 4 ++--                                    |                                                        |
+| 1 file changed, 2 insertions(+), 2 deletions(-)     |                                                        |
+| merge-demo/A(master)  >> git log                    |                                                        |
+| merge-demo/A(master)  >>                            |                                                        |
+|                                                     |                                                        |
+|-----------------------------------------------------|--------------------------------------------------------|
+| If Alice pulls now, it works fine and she gets      |                                                        |
+| Bob's changes                                       |                                                        |
+|-----------------------------------------------------|--------------------------------------------------------|
+```
+
+Looking at the graph of the history now with `git log --graph` we see that the history is now non-linear with a divergence which then gets merged:
+```
+merge-demo/B(master)  >> git log --graph
+
+*   commit 6619f0e0498628d9ce39845c7bb26351b8ce5f90 (HEAD -> master)
+|\  Merge: 5a13367 643c456
+| | Author: Mauro Werder <mauro3@runbox.com>
+| | Date:   2024-06-14 14:14:57 +0200
+| |
+| |     merged: use B
+| |
+| * commit 643c456fcff3f46e0f5e99c92f8cfd914b289a5a (origin/master)
+| | Author: Mauro Werder <mauro3@runbox.com>
+| | Date:   2024-06-14 14:13:32 +0200
+| |
+| |     A: d arg
+| |
+* | commit 5a13367b46ac029f5329fb5ec757741d0acfad96
+|/  Author: Mauro Werder <mauro3@runbox.com>
+|   Date:   2024-06-14 14:13:43 +0200
+|
+|       B: kwarg
+|
+* commit 5abb8254adbcd6e7fc94da27d5756465988fddc5
+  Author: Mauro Werder <mauro3@runbox.com>
+  Date:   2024-06-14 14:12:58 +0200
+
+      A: fns.jl
+```
+Note that commits `5a13` and `643c` are parallel and commit `6619` then merges the two strands again.
