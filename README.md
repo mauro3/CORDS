@@ -1,4 +1,5 @@
-# Workshops on reproducible research, data pipelines and scientific computing
+# Workshops and materials on
+# Reproducible research, data pipelines and scientific computing
 
 This repository holds the teaching material for two workshops we held at [WSL](https://www.wsl.ch/en/projects/cords/) in June 2024 (maybe there will be future editions too).  They were conducted in the framework of the [CORDS](https://www.wsl.ch/en/projects/cords/) project.
 
