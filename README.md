@@ -2,7 +2,7 @@
 
 This repository holds the teaching material for two workshops we held at [WSL](https://www.wsl.ch/en/projects/cords/) in June 2024 (maybe there will be future editions too).  They were conducted in the framework of the [CORDS](https://www.wsl.ch/en/projects/cords/) project.
 
-![image](https://github.com/mauro3/CORDS/assets/4098145/cec1e0be-5581-4b47-bd1e-e9a7fbbe64b6) ![image](https://github.com/mauro3/CORDS/assets/4098145/afb17ae9-d1f2-4388-80a7-9d3a1c171fa8)
+![image](https://github.com/mauro3/CORDS/assets/4098145/6bd89a78-f8fa-418f-bde5-bab4f85bf5f3) ![image](https://github.com/mauro3/CORDS/assets/4098145/afb17ae9-d1f2-4388-80a7-9d3a1c171fa8)
 
 
 The two workshops were:
