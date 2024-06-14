@@ -2,16 +2,19 @@
 
 This repository holds the teaching material for two workshops we held at [WSL](https://www.wsl.ch/en/projects/cords/) in June 2024 (maybe there will be future editions too).  They were conducted in the framework of the [CORDS](https://www.wsl.ch/en/projects/cords/) project.
 
-![image](https://github.com/mauro3/CORDS/assets/4098145/6bd89a78-f8fa-418f-bde5-bab4f85bf5f3) ![image](https://github.com/mauro3/CORDS/assets/4098145/24e60cd5-bd6a-44b5-a494-e97ae96eebf3)
+![image](https://github.com/mauro3/CORDS/assets/4098145/24e60cd5-bd6a-44b5-a494-e97ae96eebf3) ![image](https://github.com/mauro3/CORDS/assets/4098145/6bd89a78-f8fa-418f-bde5-bab4f85bf5f3)
+
+*Figures*: example of a proposed main-script to reproduce all research outputs (left), example map incorporating geodata processing of both raster and vector data (right)
 
 The two workshops were:
 
-- [Reproducible Research](https://github.com/mauro3/CORDS/tree/master/Workshop-Reproducible-Research) (2 days, by Mauro Werder @mauro3 & Victor Boussange @vboussange)
-- [Geodata Processing in Python](https://github.com/mauro3/CORDS/tree/master/Workshop-Geodata-Processing) (1/2 day, by Mylène Jacquemart @mjacqu)
+- [Reproducible Research](https://github.com/mauro3/CORDS/tree/master/Workshop-Reproducible-Research) (2 days, by Mauro Werder [@mauro3](https://github.com/mauro3) & Victor Boussange [@vboussange](https://github.com/vboussange))
+- [Geodata Processing in Python](https://github.com/mauro3/CORDS/tree/master/Workshop-Geodata-Processing) (1/2 day, by Mylène Jacquemart [@mjacqu](https://github.com/mjacqu))
 
-We also planned to run a workshop on GPU computing but in the end we didn't.  However, if interested we refer you to other workshops and resources of ours (by Ludovic Räss @luraess & Ivan Utkin @utkinis), on that topic[^gpu-resources].
+We also planned to run a workshop on GPU computing but in the end we didn't.  However, if interested we refer you to other workshops and resources of ours (by Ludovic Räss
+[@luraess](https://github.com/luraess) & Ivan Utkin [@utkinis](https://github.com/utkinis)), on that topic[^gpu-resources].
 
-The resources here are intended to be sufficient to self-study the material.  Indeed, we intend to let our future PhD students work through them when they start. The material consists of:
+The resources here in this Github repository are intended to be sufficient to self-study the material.  Indeed, we intend to let our future PhD students work through them when they start. The material consists of:
 - lecture slides
 - lecture recordings
 - hands-on tasks such as coding projects and Jupyter notebooks
