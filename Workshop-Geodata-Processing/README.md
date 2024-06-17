@@ -7,9 +7,9 @@
 | ---- | ---- | 
 | 8:15 - 08:30 | Arrival  & setup   | 
 | 8:30 - 9:15 | Intro & course overview, background |
-| 9:15 - 10:15 | Working with vector  |
+| 9:15 - 10:15 | Working with vector data |
 | 10:15 - 10:30 | Coffe break |
-| 10:30 - 11:00 | Working with vector cont. |
+| 10:30 - 11:00 | Working with vector data cont. |
 | 11:00 - 12:15 | Working with raster data |
 | 12:15 | Lunch at mensa (if desired) |
  
