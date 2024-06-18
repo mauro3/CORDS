@@ -26,4 +26,7 @@ Once your install is complete, run `conda activate cords-geoprocessing` to activ
 
 - In the Workshop-Geodata-Processing directory, create a directory called `data`. 
 - Start by running the Download-data notebook. Before running the Working-with-vector-data or Working-with-raster-data notebooks, make sure you have the following directories with the corresponding files downloaded and unzipped: sgi_2016 (Swiss glacier inventory), glathida-3.1.0 (ice thickness measurements), RGI60-11 (ice thickness model), DEMs (digital elevation models for Silvretta glacier from 2014 and 2020), planet (multispectral image of Silvretta glacier).
-- Note that the rater data notebook draws on data that is created during the vector data notebook, so you need to run that first.
+
+
+## How to 
+The course consists of two main notebooks: Working-with-vector-data and Working-with-raster data. These main exercise notebooks do not contain complete code, so of it has been omitted, though hints are usually provided. Try to complete the code by filling in the missing pieces. If you get stuck the corresponding -solutions notebooks contain the complete code. Note that the rater data notebook draws on data that is created during the vector data notebook, so you need to run that first.
