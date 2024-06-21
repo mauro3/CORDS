@@ -2,8 +2,7 @@
 
 This repository holds the teaching material for two workshops we held at [WSL](https://www.wsl.ch/en/projects/cords/) in June 2024 (maybe there will be future editions too).  They were conducted in the framework of the [CORDS](https://www.wsl.ch/en/projects/cords/) project.
 
-<img src="https://github.com/mauro3/CORDS/assets/4098145/24e60cd5-bd6a-44b5-a494-e97ae96eebf3" alt="reproducible-research example code" width="350"/>
-<img src="https://github.com/mauro3/CORDS/assets/4098145/6bd89a78-f8fa-418f-bde5-bab4f85bf5f3" alt="map including both vector and raster datasets" width="450"/>
+![image](https://github.com/mauro3/CORDS/assets/4098145/139c5dfb-2e98-4a0a-9e56-71492b6d4eb0)
 
 *Figures*: example of a proposed main-script to reproduce all research outputs (left), example map incorporating geodata processing of both raster and vector data (right)
 
