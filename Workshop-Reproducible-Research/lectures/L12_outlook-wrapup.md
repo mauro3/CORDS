@@ -6,7 +6,7 @@ Looked at many aspects of how to make science reproducible
   - data handling
   - best practices
 
-We did this in a project base way, hopefully this means that things will stick better ;-)
+We did this in a project-based way, hopefully this means that things will stick better ;-)
 
 We produced some tools which maybe of use to you in future projects:
 - download function

@@ -1,15 +1,22 @@
-# Reproducible Research Workshop
+# Reproducible Research Course
 
 This is a hands-on workshop on reproducible research.  Here we provide the lectured content and the instructions for the hands-on project which will be coded as we advance through the workshop.
 
-## Schedule
+Overview of the online material for self-study:
+- the best entry point is the [Table of contents](TOC.md).  In particular:
+  - lectures are found [here](https://github.com/mauro3/CORDS/tree/master/Workshop-Reproducible-Research/lectures); note that for some lectures there is a `*_slides.md` file, which are the slides, and a long-form `*.md` file.
+  - the toy research project is described in the [task.md](https://github.com/mauro3/CORDS/blob/master/Workshop-Reproducible-Research/tasks/tasks.md) file
+- [video recording](https://people.ee.ethz.ch/~werderm/rere-data/video.html) of the lectures and task descriptions
+- repositories implementing the toy research project:
+  - https://github.com/vboussange/rere
+  - https://github.com/mauro3/ReRe2.jl
 
-[Table of contents](TOC.md)
+## Further materials
 
-Example Task repos:
-- https://github.com/vboussange/rere
-- https://github.com/mauro3/ReRe2.jl
+- [Other Resources on reproducible research](resources.md)
 
+
+## Schedule of the in-person workshop (June 2024)
 
 | **Day 1 (10.6.2024)** |                          |   |   | **Day 2 (11.6.2024)** |                    |
 |-----------------------|--------------------------|---|---|-----------------------|--------------------|
@@ -24,11 +31,3 @@ Example Task repos:
 | 15:00 - 15:15         | Coffee break             |   |   | 15:00 - 15:15         | Coffee break       |
 | 15:15 - 17:00         |                          |   |   | 15:15 - 17:00         |                    |
 | 17:00                 | Apero                    |   |   | 17:00 - 17:15         | wrap-up            |
-
-
-
-
-
-## Further materials
-
-- [Other Resources on reproducible research](resources.md)
