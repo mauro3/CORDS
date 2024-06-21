@@ -1,5 +1,10 @@
-# Table of Contents
+# Table of contents of the reproducible research workshop CORDS
 L1 == Lecture 1; T3 == Task 3
+
+Note that the video recording can be found on
+[link](https://people.ee.ethz.ch/~werderm/rere-data/video.html), with chapters corresponding to below lectures and to some of the tasks.
+
+The material should be studied row by row of the table.
 
 
 | Topic                          | Lecture                                                                                                                                                                                           | Hands-on                                                                                                                                                                                |

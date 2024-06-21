@@ -1,10 +1,10 @@
 # Workshops and materials on reproducible research, data pipelines and scientific computing
 
-This repository holds the teaching material for two workshops we held at [WSL](https://www.wsl.ch/en/projects/cords/) in June 2024 (maybe there will be future editions too).  They were conducted in the framework of the [CORDS](https://www.wsl.ch/en/projects/cords/) project.
+This repository holds the teaching material for two workshops we held at [WSL](https://www.wsl.ch/en/projects/cords/) in June 2024 (maybe there will be future editions too).  They were conducted in the framework of the [CORDS](https://www.wsl.ch/en/projects/cords/) project, funded by WSL.
 
 ![image](https://github.com/mauro3/CORDS/assets/4098145/139c5dfb-2e98-4a0a-9e56-71492b6d4eb0)
 
-*Figures*: example of a proposed main-script to reproduce all research outputs (left), example map incorporating geodata processing of both raster and vector data (right)
+*Figure*: example of a proposed main-script to reproduce all research outputs (left), example map incorporating geodata processing of both raster and vector data (right)
 
 The two workshops were:
 
