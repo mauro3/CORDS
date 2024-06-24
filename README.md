@@ -1,8 +1,8 @@
-# Workshops and materials on reproducible research, data pipelines and scientific computing
+# Workshops and materials on reproducible research and geodata processing
 
 This repository holds the teaching material for two workshops we held at [WSL](https://www.wsl.ch/en/projects/cords/) in June 2024 (maybe there will be future editions too).  They were conducted in the framework of the [CORDS](https://www.wsl.ch/en/projects/cords/) project, funded by WSL.
 
-**The provided study material is complete, thus allowing to self-study these two courses**
+**The provided study material is complete, thus enabling the self-study of these two courses.**
 
 
 ![image](https://github.com/mauro3/CORDS/assets/4098145/139c5dfb-2e98-4a0a-9e56-71492b6d4eb0)
