@@ -8,8 +8,9 @@ Overview of the online material for self-study:
   - the toy research project is described in the [task.md](https://github.com/mauro3/CORDS/blob/master/Workshop-Reproducible-Research/tasks/tasks.md) file
 - [video recording](https://people.ee.ethz.ch/~werderm/rere-data/video.html) of the lectures and task descriptions
 - repositories implementing the toy research project:
-  - https://github.com/vboussange/rere
-  - https://github.com/mauro3/ReRe2.jl
+  - Python https://github.com/vboussange/rere
+  - Julia https://github.com/mauro3/ReRe2.jl
+  - R https://github.com/trotsiuk/breithorn-toy-project-CORDS with associated package https://github.com/fabern/breithornToyProjectCORDS
 
 ## Further materials
 
