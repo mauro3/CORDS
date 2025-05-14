@@ -3,7 +3,7 @@
 This is a hands-on workshop on reproducible research.  Here we provide the lectured content and the instructions for the hands-on project which will be coded as we advance through the workshop.
 
 Overview of the online material for self-study:
-- the best entry point is the [Table of contents](TOC.md).  In particular:
+- the **best entry point** is the [Table of contents](TOC.md).  In particular:
   - lectures are found [here](https://github.com/mauro3/CORDS/tree/master/Workshop-Reproducible-Research/lectures); note that for some lectures there is a `*_slides.md` file, which are the slides, and a long-form `*.md` file.
   - the toy research project is described in the [task.md](https://github.com/mauro3/CORDS/blob/master/Workshop-Reproducible-Research/tasks/tasks.md) file
 - [video recording](https://people.ee.ethz.ch/~werderm/rere-data/video.html) of the lectures and task descriptions
